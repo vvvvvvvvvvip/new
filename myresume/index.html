@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <title>个人简历</title>
+    <link rel="stylesheet" href="../css/jquery.fullPage.css">
+    <link rel="stylesheet" href="./css/index.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+    <script src="../js/jquery.min.js"></script>
+    <!--<script src="./js/bootstrap.min.js"></script>-->
+    <script src="../js/jquery.fullPage.min.js"></script>
+    <script src="./js/index.js"></script>
+
+    <script>
+        $(function(){
+            $('#dowebok').fullpage({
+//                sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90'],
+                anchors: ['page1', 'page2', 'page3', 'page4'],
+                menu: '#menu'
+            });
+        });
+    </script>
+</head>
+
+<body>
+<div id="dowebok">
+
+    <div class="section section1" id="section1">
+        <img src="../image/musicLogo.png" alt="" class="mySelf"/>
+        <div class="animate">
+            <p>前端工程师：程某人</p>
+
+            <p>错了就改，实践出真知，总要有人先犯错误</p>
+
+        </div>
+        <img class="goNext" src="http://www.daiwei.org/index/images/icon/goBottom.png" alt="滚动鼠标" title="查看详细信息">
+    </div>
+    <div class="section section2" id="section2">
+        <h3>哇哇哇哇哇</h3>
+
+        <div class="row baseInfo">
+            <div class="baseOne col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="hideMask">基本信息</div>
+                <p>姓名：<span>程某人</span></p>
+                <p>出生年月：<span>1995 01 06</span></p>
+                <p>学历：<span>大专</span></p>
+                <p>专业：<span>电子商务</span></p>
+                <p>手机号：<span>183****5012</span></p>
+                <p>邮箱：<span>183****5012@163.com</span></p>
+                <p>个人网站：<span><a href="http://vvvvvvvvvvip.github.io/">http://vvvvvvvvvvip.github.io/</a></span></p>
+
+            </div>
+            <div class="baseTwo col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="hideMaskTwo">工作经历</div>
+                <p>2015年12月--2016年6月：<span>在山西某公司实习</span></p>
+                <p>2016年7月--至今：<span>乐学汇通(北京)教育有限公司</span></p>
+                <p>主要工作是pc网页端，手机移动端以及网站维护的工作。</p>
+            </div>
+            <div class="baseThree col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="hideMaskThree">个人能力</div>
+                    <p><span>熟练掌握css html js相关技术,了解angular,vue2等技术使用vue2模仿做过音乐播放器，对于框架使用都有一定了解</span></p>
+                    <p><span>之前做过移动端h5嵌入app的项目,有一定移动端项目经验</span></p>
+                    <p><span>了解数据交互,利用ajax请求处理数据,进行前端渲染</span></p>
+                    <p><span>有对于技术的追求的欲望,尤其在前端这个技术变迁飞快的年代</span></p>
+                    <p><span>公司只有我一个前端,我也是一直在边工作边学习</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="section section3" id="section3">
+        <h3>个人作品</h3>
+        <img src="./image/showTwo.png" alt="" class="showOne"/>
+        <img src="./image/showOne.png" alt="" class="showTwo"/>
+        <div>
+            <div class="animate two">
+                <span>安徽的客服哈客户反馈啥款到发货卡萨丁飞机客户安徽的客服哈客户</span>
+                <span>安徽的客服哈客户反馈啥款到发货卡萨丁飞机客户安徽的客服哈客户</span>
+                <span>安徽的客服哈客户反馈啥款到发货卡萨丁飞机客户安徽的客服哈客户</span>
+                <span>安徽的客服哈客户反馈啥款到发货卡萨丁飞机客户安徽的客服哈客户</span>
+                <span>安徽的客服哈客户反馈啥款到发货卡萨丁飞机客户安徽的客服哈客户</span>
+                <span>安徽的客服哈客户反馈啥款到发货卡萨丁飞机客户安徽的客服哈客户</span>
+                <span>安徽的客服哈客户反馈啥款到发货卡萨丁飞机客户安徽的客服哈客户</span>
+                <span>安徽的客服哈客户反馈啥款到发货卡萨丁飞机客户安徽的客服哈客户</span>
+                <span>安徽的客服哈客户反馈啥款到发货卡萨丁飞机客户安徽的客服哈客户</span>
+            </div>
+        </div>
+    </div>
+    <div class="section section4" id="section4">
+        <h3>第四屏</h3>
+        <p>这是最后一屏</p>
+    </div>
+</div>
+<div class="module" style="display: none">
+    <li>
+        <!--<span scope="row">${i}</span>-->
+        <span class="name">${name}</span>
+        <span class="singer">${singer}</span>
+        <!--<span><img src="${img_url}" alt=""/></span>-->
+    </li>
+</div>
+
+</body>
+</html>

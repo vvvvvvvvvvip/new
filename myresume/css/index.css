@@ -1,0 +1,421 @@
+#menu {
+    transform: translate(-50%);
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+
+#menu a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.section {
+    text-align: center;
+    color: #fff;
+}
+
+body {
+    background: url("../image/bg.jpg") center no-repeat;
+    background-size: 100%;
+}
+
+.section {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.mySelf {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    opacity: 0;
+    margin: 0 0 5%;
+    transform: translate(500px, 100px) rotate(-180deg) scale(.5);
+}
+
+@keyframes ballDrop {
+    60% {
+        transform: translate(0, 100px) rotate(360deg) scale(.5);
+    }
+    100% {
+        transform: translate(0) rotate(0deg) scale(1);
+        opacity: 1;
+    }
+}
+
+#section1.active .mySelf {
+    -webkit-transform: translate(500px, -200px) scale(1);
+    -moz-transform: translate(500px, -200px) scale(1);
+    -ms-transform: translate(500px, -200px) scale(1);
+    -o-transform: translate(500px, -200px) scale(1);
+    transform: translate(500px, -200px) scale(1);
+    animation: ballDrop 1s forwards;
+}
+
+#section1.active .animate p {
+    transform: translate(200px, -100px) scale(3);
+    animation: animateSelf .8s forwards;
+    opacity: 0;
+}
+
+@keyframes animateSelf {
+    60% {
+        transform: translate(0, 100px) scale(1.5);
+    }
+    100% {
+        transform: translate(0) rotate(0deg) scale(1);
+        opacity: 1;
+    }
+}
+
+.animate {
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    border-top: 1px solid #f3f3f3;
+    padding-top: 65px;
+    border-radius: 30%;
+}
+
+#section1.active .animate p {
+    font-size: 20px;
+}
+
+#section1.active .animate p:nth-of-type(1) {
+    animation-delay: .5s;
+    color: crimson;
+}
+
+#section1.active .animate p:nth-of-type(2) {
+    animation-delay: 1.5s;
+}
+
+#section1.active .animate p:nth-of-type(3) {
+    animation-delay: 2s;
+}
+
+.goNext {
+    opacity: 0;
+    animation: goNext 3.5s infinite;
+    animation-delay: 3.5s;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+    bottom: 30px;
+    cursor: pointer;
+}
+
+@keyframes goNext {
+    0% {
+        opacity : 1;
+        transform: translate(-50%,-30px);
+        transition: all .8s ease 3.4s;
+   }
+    100% {
+        opacity : 0;
+        transform: translate(-50%,0);
+        transition: all .8s ease 3.4s;
+    }
+}
+
+.showOne,.showTwo {
+    width: 120px;
+    /*opacity: 0;*/
+}
+
+.showOne {
+    transform: rotate(334deg);
+}
+
+.showTwo {
+    transform: rotate(26deg);
+}
+
+#section2,#section3 {
+    position: relative;
+}
+
+#section3.active .showOne {
+    position: absolute;
+    left: 40%;
+    top: 30px;
+    transform: translate(-200%,240%) scale(1) rotate(-20deg);
+    animation: showOne 3s ease-out;
+    opacity: 1;
+}
+
+#section3.active .showTwo {
+    position: absolute;
+    top: 30px;
+    right: 40%;
+    transform: translate(200%,240%) scale(1) rotate(20deg);
+    animation: showTwo 3s ease-out;
+    opacity: 1;
+}
+
+@keyframes showOne {
+    0% {
+        opacity: 0;
+        transform: translate(0) scale(1);
+        transition: all .8s linear 3.4s;
+    }
+    50% {
+        opacity: 1;
+        animation-timing-function: ease-out;
+        transform: translate(0,500%) scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-400%,300%) scale(1);
+    }
+}
+
+@keyframes showTwo {
+    0% {
+        opacity: 0;
+        transform: translate(0) scale(1);
+        transition: all .8s linear 3.4s;
+    }
+    50% {
+        opacity: 1;
+        animation-timing-function: ease-out;
+        transform: translate(0,500%) scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(400%,300%) scale(1);
+    }
+}
+
+#section3 .animate {
+    width: 30%;
+    margin: 0 auto;
+}
+
+#section2.active h3,#section3.active h3 {
+    margin-bottom: 40px;
+    -webkit-animation: showFalse 2s linear;
+    -o-animation: showFalse 2s linear;
+    animation: showFalse 2s linear;
+    opacity: 1;
+}
+
+@keyframes showFalse {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#section2.active .baseInfo .baseOne {
+    transform: translate(200px, -500px);
+    animation: animateBaseOne 1s forwards;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 15px;
+
+}
+
+#section2 .baseInfo .baseOne .hideMask,
+#section2 .baseInfo .baseTwo .hideMaskTwo,
+#section2 .baseInfo .baseThree .hideMaskThree {
+    width: 314px;
+}
+
+#section2 p {
+     width: 314px;
+     /*height: 240px;*/
+ }
+
+#section2 p {
+    margin: 0 auto;
+}
+
+
+#section2.active .baseInfo .baseOne .hideMask,
+#section2.active .baseInfo .baseTwo .hideMaskTwo,
+#section2.active .baseInfo .baseThree .hideMaskThree{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+#section2.active .baseInfo .baseTwo {
+    transform: translate(200px, -100px);
+    animation: animateBaseTwo 2s forwards;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+#section2.active .baseInfo .baseThree {
+    animation: animateBaseThree 3s forwards;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+@keyframes animateBaseOne {
+      0% {
+          opacity: 0;
+          transform: translateY(-500px);
+      }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes animateBaseTwo {
+    0% {
+        opacity: 0;
+        transform: translateY(-500px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes animateBaseThree {
+    0% {
+        opacity: 0;
+        transform: translateY(-500px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+#section3.active .animate span {
+    display: inline-block;
+}
+
+#section3.active .animate span:nth-of-type(2) {
+    animation-delay: .05s;
+}
+
+#section3.active .animate span:nth-of-type(3) {
+    animation-delay: .1s;
+}
+
+#section3.active .animate span:nth-of-type(4) {
+    animation-delay: .15s;
+}
+
+#section3.active .animate span:nth-of-type(5) {
+    animation-delay: .2s;
+}
+
+#section3.active .animate span:nth-of-type(6) {
+    animation-delay: .25s;
+}
+
+#section3.active .animate span:nth-of-type(7) {
+    animation-delay: .3s;
+}
+
+#section3.active .animate span:nth-of-type(8) {
+    animation-delay: .35s;
+}
+
+#section3.active .animate span:nth-of-type(9) {
+    animation-delay: .4s;
+}
+
+#section3.active .two span {
+    color: lightseagreen;
+    opacity: 0;
+    transform: translate(200px, -100px) scale(3);
+    animation: ballDrop 1s forwards;
+}
+
+@keyframes ballDrop {
+    60% {
+        transform: translate(0, 20px) scale(.5);
+    }
+    100% {
+        transform: translate(0) scale(1);
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #section3 .animate {
+        min-width: 255px;
+    }
+
+    #section3.active .showOne {
+        position: absolute;
+        left: 40%;
+        top: 30px;
+        transform: translate(-123%,0%) scale(0.8) rotate(-20deg);
+        animation: showOneElse 3s ease-out;
+        opacity: 1;
+    }
+
+    @keyframes showOneElse {
+        0% {
+            /*opacity: 0;*/
+            transform: translate(-123%,0%) scale(0.8);
+            transition: all .8s linear 3.4s;
+        }
+        100% {
+            opacity: 1;
+            animation-timing-function: ease-out;
+            transform: translate(-123%,500%) scale(0.8);
+        }
+    }
+
+    #section3.active .showTwo {
+        position: absolute;
+        top: 30px;
+        right: 40%;
+        transform: translate(123%,0%) scale(0.8) rotate(20deg);
+        animation: showTwoElse 3s ease-out;
+        opacity: 1;
+    }
+
+    @keyframes showTwoElse {
+        0% {
+            transform: translate(123%,0%) scale(0.8);
+            transition: all .8s linear 3.4s;
+        }
+        100% {
+            opacity: 1;
+            animation-timing-function: ease-out;
+            transform: translate(123%,500%) scale(0.8)
+        }
+    }
+
+    #section3.active .showOne {
+        transform: translate(-123%,0%) scale(0.8) rotate(-20deg);
+    }
+
+    #section3.active .showTwo {
+        transform: translate(123%,0%) scale(0.8) rotate(20deg);
+    }
+}
+
+#section2 .baseOne .hideMask,#section2 .baseTwo .hideMaskTwo,#section2 .baseThree .hideMaskThree {
+    background: #f3f3f3;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    position: absolute;
+    transition: all 0.5s;
+    color: #000;
+}
+
+#section2 .baseOne:hover .hideMask,#section2 .baseTwo:hover .hideMaskTwo,#section2 .baseThree:hover .hideMaskThree {
+     top: -100%;
+ }

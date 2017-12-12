@@ -1,0 +1,220 @@
+#menu {
+    transform: translate(-50%);
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+
+#menu a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.section {
+    text-align: center;
+    /*font: 50px "Microsoft Yahei";*/
+    color: #fff;
+}
+
+.section1 {
+    background: url(http://idowebok.u.qiniudn.com/77/1.jpg) 50%;
+}
+
+.section2 {
+    background: url(http://idowebok.u.qiniudn.com/77/2.jpg) 50%;
+}
+
+.section3 {
+    background: url(http://idowebok.u.qiniudn.com/77/3.jpg) 50%;
+}
+
+.section4 {
+    background: url(http://idowebok.u.qiniudn.com/77/4.jpg) 50%;
+}
+
+img {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    right: 20px;
+    top: 60px;
+    border-radius: 50%;
+    animation: goRotate 16s linear infinite .1s;
+    z-index: 1;
+}
+
+@keyframes goRotate{
+    0%{
+        transform: rotate(1deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.tableBox {
+    height: 300px;
+    overflow: auto;
+    font-size: 14px;
+    position: absolute;
+    right: 20px;
+    top: 60px;
+    color: cornsilk;
+    z-index: 1;
+    background: rgba(0,0,0,0.7);
+    display: none;
+}
+
+ul {
+    padding: 0 15px;
+    list-style: none;
+}
+
+ul li {
+    height: 40px;
+    line-height: 40px;
+}
+
+.singer {
+    float: right;
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+}
+
+/* Animation Two */
+#section1.active .animate {
+    font-size: 30px;
+}
+
+#section1.active .animate span {
+    display: inline-block;
+}
+
+#section1.active .animate span:nth-of-type(1) {
+    color: crimson;
+}
+
+#section1.active .animate span:nth-of-type(2) {
+    animation-delay: .05s;
+    color: crimson;
+}
+
+#section1.active .animate span:nth-of-type(3) {
+    animation-delay: .1s;
+    color: crimson;
+}
+
+#section1.active .animate span:nth-of-type(4) {
+    animation-delay: .15s;
+}
+
+#section1.active .animate span:nth-of-type(5) {
+    animation-delay: .2s;
+}
+
+#section1.active .animate span:nth-of-type(6) {
+    animation-delay: .25s;
+}
+
+#section1.active .animate span:nth-of-type(7) {
+    animation-delay: .3s;
+}
+
+#section1.active .animate span:nth-of-type(8) {
+    animation-delay: .35s;
+}
+
+#section1.active .animate span:nth-of-type(9) {
+    animation-delay: .4s;
+}
+
+#section1.active .two span {
+    color: lightseagreen;
+    opacity: 0;
+    transform: translate(200px, -100px) scale(3);
+    animation: ballDrop .8s forwards;
+}
+
+@keyframes ballDrop {
+    60% {
+        transform: translate(0, 20px) rotate(-180deg) scale(.5);
+    }
+    100% {
+        transform: translate(0) rotate(0deg) scale(1);
+        opacity: 1;
+    }
+}
+
+#list {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+}
+
+.mask {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    position: fixed;
+    z-index: 2;
+}
+
+
+#list label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    position: relative;
+    left: 15px;
+    top: 15px;
+}
+
+#list label .shang, #list label .xia {
+    display: block;
+    width: 28px;
+    height: 1px;
+    background: #fff;
+    transition: transform .5s ease .2s;
+    transform-origin: 79%;
+}
+
+#list label .shang {
+    margin-bottom: 10px;
+    margin-top: 28px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#list label .xia {
+    margin-top: 16px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#check {
+    display: none;
+}
+
+#check:checked + label .shang {
+    transform: rotate(45deg);
+}
+
+#check:checked + label .xia {
+    transform: rotate(-45deg);
+}
+

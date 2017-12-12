@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>个人主页</title>
+    <link rel="stylesheet" href="./css/jquery.fullPage.css">
+    <link rel="stylesheet" href="./css/index.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./css/bootstrap.min.css"/>
+    <script src="./js/jquery.min.js"></script>
+    <!--<script src="./js/bootstrap.min.js"></script>-->
+    <script src="./js/jquery.fullPage.min.js"></script>
+    <script src="./js/data.js"></script>
+    <script src="./js/index.js"></script>
+
+    <script>
+        $(function(){
+            $('#dowebok').fullpage({
+                sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90'],
+                anchors: ['page1', 'page2', 'page3', 'page4'],
+                menu: '#menu'
+            });
+        });
+    </script>
+</head>
+
+<body>
+<audio src="http://www.daiwei.org/vue/music/%E6%9E%97%E4%BF%8A%E6%9D%B0,%E8%94%A1%E5%8D%93%E5%A6%8D%20-%20%E5%B0%8F%E9%85%92%E7%AA%9D.mp3"></audio>
+<img src="./image/musicLogo.png" alt="" class="showMusicList"/>
+<div class="tableBox">
+    <ul class="table table-hover">
+
+    </ul>
+</div>
+<div class="mask">
+    <ul id="menu">
+        <li data-menuanchor="page1" class="active"><a href="#page1">首页</a></li>
+        <li data-menuanchor="page2"><a href="#page2">第二屏</a></li>
+        <li data-menuanchor="page3"><a href="#page3">第三屏</a></li>
+        <li data-menuanchor="page4"><a href="#page4">设置</a></li>
+    </ul>
+</div>
+    <div id="list">
+        <input type="checkbox" id="check">
+        <label for="check">
+              <span class="shang">
+              </span>
+              <span class="xia">
+              </span>
+        </label>
+    </div>
+
+
+
+<div id="dowebok">
+
+    <div class="section section1" id="section1">
+        <div class="animate two">
+            <span>V</span>
+            <span>I</span>
+            <span>P</span>
+            <span>欢</span>
+            <span>迎</span>
+            <span>你</span>
+            <span>的</span>
+            <span>来</span>
+            <span>访</span>
+        </div>
+        <button></button>
+        <button></button>
+    </div>
+    <div class="section section2" id="section2">
+        <h3>第二屏</h3>
+        <p>请查看左上角，点击可以控制</p>
+    </div>
+    <div class="section section3" id="section3">
+        <h3>第三屏</h3>
+        <p>绑定的菜单没有默认的样式，你需要自行编写</p>
+    </div>
+    <div class="section section4" id="section4">
+        <h3>第四屏</h3>
+        <p>这是最后一屏</p>
+    </div>
+</div>
+<div class="module" style="display: none">
+    <li>
+        <!--<span scope="row">${i}</span>-->
+        <span class="name">${name}</span>
+        <span class="singer">${singer}</span>
+        <!--<span><img src="${img_url}" alt=""/></span>-->
+    </li>
+</div>
+
+</body>
+</html>
