@@ -242,7 +242,10 @@ body {
 
 #section2.active .baseInfo .baseOne .hideMask,
 #section2.active .baseInfo .baseTwo .hideMaskTwo,
-#section2.active .baseInfo .baseThree .hideMaskThree{
+#section2.active .baseInfo .baseThree .hideMaskThree,
+#section2 .baseInfo .baseOne .hideMask,
+#section2 .baseInfo .baseTwo .hideMaskTwo,
+#section2 .baseInfo .baseThree .hideMaskThree{
     position: absolute;
     left: 0;
     right: 0;
@@ -293,6 +296,10 @@ body {
         opacity: 1;
         transform: translate(0);
     }
+}
+
+#section3 .animate span {
+    display: none;
 }
 
 #section3.active .animate span {
