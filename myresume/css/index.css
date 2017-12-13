@@ -426,3 +426,15 @@ body {
 #section2 .baseOne:hover .hideMask,#section2 .baseTwo:hover .hideMaskTwo,#section2 .baseThree:hover .hideMaskThree {
      top: -100%;
  }
+
+#section4 a {
+    font-size: 20px;
+    display: inline-block;
+    width: 150px;
+    height: 48px;
+    line-height: 48px;
+    background: cornsilk;
+    color: #000;
+    border-radius: 5px;
+    margin-top: 25px;
+}
