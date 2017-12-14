@@ -1,0 +1,223 @@
+参考网址layui
+http://www.layui.com/demo/table/style.html
+
+git remote add origin https://github.com/vvvvvvvvvvip/dist.git
+
+图标不显示的时候build/utils
+,
+        publicPath: '../../'
+打包的时候config/index.js
+assetsPublicPath"/"改成“./”
+
+上传文件
+git add .
+git commit -m "注释信息"
+git pull origin master
+git push origin master
+
+
+http://www.runoob.com/w3cnote/vue2-start-coding.html
+https://segmentfault.com/a/1190000010124638
+（以上是未看完要连着继续看的）
+
+github上传文件
+http://blog.csdn.net/pql925/article/details/72772660
+
+
+雪碧图工具
+http://download.csdn.net/download/qiguoqiang/9792618
+
+nodejs安装参考网站
+http://www.cnblogs.com/yzadd/p/6547668.html
+http://www.cnblogs.com/miller-star/p/6394760.html
+http://www.runoob.com/w3cnote/vue2-start-coding.html
+cc
+http://blog.csdn.net/abcde158308/article/details/61673120
+node.js
+http://pan.baidu.com/s/1eSvki4M 密码：pe5o
+
+vue引用css文章参考如下：
+http://blog.csdn.net/liwusen/article/details/53519342?utm_source=itdadao&utm_medium=referral
+vue用到的css地址
+https://vux.li/#/
+
+vue文档
+1. 开发pc端网页，element-ui。
+2. 移动端，vux或muni-ui。
+vue调试工具
+https://www.cnblogs.com/mmzuo-798/p/6928532.html
+
+
+https://www.v2ex.com/t/308080
+https://github.com/qianyinghuanmie/vue2.0-demos
+https://router.vuejs.org/zh-cn/index.html
+链接：http://pan.baidu.com/s/1mhTT9e4 密码：iisy
+链接：http://pan.baidu.com/s/1o884eCi 密码：010c
+
+微信小程序链接
+链接：http://pan.baidu.com/s/1qYzCuew 密码：k5tw
+链接：http://pan.baidu.com/s/1pK8R78R 密码：1j3g
+微信分享的实例 
+http://best.tianjihr.com/vote/index.html?companyid=5a0d70ca02158b06946fb57c&openid=oIbu1jpKAAN9h7Su8zI9NxrptZu8
+微信分享开发介绍版
+https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1445241432
+http://blog.csdn.net/u013713832/article/details/72778692
+微信分享开发注意事项
+http://blog.sina.com.cn/s/blog_6c969b4a0102w8h3.html
+判断是否是微信打开
+<script type="text/javascript">
+            var ua = navigator.userAgent.toLowerCase();
+            var isWeixin = ua.indexOf('micromessenger') != -1;
+            var isAndroid = ua.indexOf('android') != -1;
+            var isIos = (ua.indexOf('iphone') != -1) || (ua.indexOf('ipad') != -1);
+            if (!isWeixin) {
+                document.head.innerHTML = '<title>抱歉，出错了</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0"><link rel="stylesheet" type="text/css" href="https://res.wx.qq.com/open/libs/weui/0.4.1/weui.css">';
+                document.body.innerHTML = '<div class="weui_msg"><div class="weui_icon_area"><i class="weui_icon_info weui_icon_msg"></i></div><div class="weui_text_area"><h4 class="weui_msg_title">请在微信客户端打开链接</h4></div></div>';
+            }
+        </script>
+
+图片
+http://www.daiwei.org/vue/bg/wave.gif
+
+参考网站
+https://zhuanlan.zhihu.com/p/30299329
+音乐播放器
+http://kimy.coding.me/vue-assistant/#/
+http://www.daiwei.org/vue-music.html#/mymusic
+https://github.com/lululuting/tgyy
+https://github.com/IFmiss/vue-music
+ionic3+Angular4实现接口请求及本地json文件读取
+http://www.jianshu.com/p/7006a9842c38
+查看各个浏览器的内核
+http://www.cnblogs.com/zfc2201/archive/2012/07/17/2596500.html
+学习：对作用链、闭包、原型及原型链的理解链接
+http://www.cnblogs.com/yehui-mmd/p/5847201.html
+整理总结
+水平垂直居中网址：https://www.cnblogs.com/hutuzhu/p/4450850.html
+http://www.qdfuns.com/notes
+http://www.qdfuns.com/notes/33760/01c660d35ddca901882041774dffd68e.html
+http://web.jobbole.com/88041/
+https://cn.vuejs.org/v2/guide/transitioning-state.html（vue动画过渡的实例）
+http://www.htmleaf.com/Demo/20141109433.html（select的美化效果）
+javascript正则表达式检验
+http://www.qdfuns.com/notes/20005/0780b597d12870198c29ab1bad98589b.html
+
+ajax请求方法实例
+http://www.jb51.net/article/64185.htm
+
+http://www.jqueryfuns.com/
+拼音索引城市字母选择
+http://www.17sucai.com/pins/demoshow/4827
+
+
+手机在自己电脑 查看页面
+npm  install  http-server -g
+http-server
+
+判断元素是否出现在可视范围内：
+function isVisible($node){
+    var winH = $(window).height(),
+        scrollTop = $(window).scrollTop(),
+        offSetTop = $(window).offSet().top;
+    if (offSetTop < winH + scrollTop) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+fullpage应用案例
+http://www.jq22.com/yanshi8663
+
+
+vue学习地址
+http://mp.weixin.qq.com/s/U2cSiEdc1DTqV0HvAo6EjA
+https://forum.vuejs.org/
+https://github.com/vuejs
+https://cn.vuejs.org/
+
+js
+链接：http://pan.baidu.com/s/1eS5ZY2u 密码：bii6
+
+
+链接：http://pan.baidu.com/s/1hsFzt3Y 密码：9iv6
+
+安装淘宝镜像
+npm config set registry https://registry.npm.taobao.org 
+
+
+PC端页面调用QQ进行在线聊天
+<a href="tencent://message/?uin=1748872910&Site=Sambow&Menu=yes">QQ在线咨询</a>
+
+webpack教程
+链接：http://pan.baidu.com/s/1sldVS4H 密码：vmjh
+
+流程图制作软件
+www.processon.com、
+压缩图片的网站
+https://tinypng.com/
+天基参考网站
+http://m.tianjihr.com
+图表参考网站
+http://echarts.baidu.com/examples.html
+http://www.ichartjs.com/
+bootstrap网站参考
+http://www.bootcss.com/
+//ie8下的兼容性经验小结
+http://www.cnblogs.com/ruomeng/p/5332814.html
+
+
+http://study.163.com/
+慕课网
+http://www.imooc.com/course/list
+
+http://fontawesome.io/
+
+
+
+http://www.runoob.com/angularjs/angularjs-intro.html
+
+http://www.runoob.com/angularjs/angularjs-tutorial.html
+materialize调色图
+https://www.materialpalette.com/deep-orange/orange
+
+http://www.apjs.net/
+
+http://www.htmleaf.com/jQuery/Table/
+
+http://www.jq22.com/
+//凡客建站
+
+angularjs2网址
+https://yanxiaodi.gitbooks.io/ionic2-guide/content/tutorial/%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84.html
+http://ionicframework.com/docs/components/#card-header(study)
+http://amazeui.org/（跨屏前端框架）
+
+mui
+vue
+
+
+获取地址栏参数的方法
+GetQueryStringg("")=====地址栏参数名称
+function GetQueryString(name)
+{
+     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+     var r = window.location.search.substr(1).match(reg);
+     if(r!=null)return  unescape(r[2]); return null;
+}
+//随机获取颜色值
+function getReandomColor(){
+return '#'+(function(h){
+return new Array(7-h.length).join("0")+h
+})((Math.random()*0x1000000<<0).toString(16))
+}
+
+
+
+百度api使用定位
+http://api.map.baidu.com/lbsapi/getpoint/index.html
+http://api.map.baidu.com/lbsapi/creatmap/index.html
+
+程序员交流社区
+https://stackoverflow.com/users/login?ssrc=anon_ask&returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2fask
+
