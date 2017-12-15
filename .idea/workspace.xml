@@ -75,7 +75,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/myresume/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.40816328">
+            <state vertical-scroll-proportion="2.0">
               <caret line="80" column="32" selection-start-line="80" selection-start-column="22" selection-end-line="80" selection-end-column="32" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -313,7 +313,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1942" height="1042" extended-state="7" />
+    <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18333334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -855,7 +855,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/myresume/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40816328">
+        <state vertical-scroll-proportion="2.0">
           <caret line="80" column="32" selection-start-line="80" selection-start-column="22" selection-end-line="80" selection-end-column="32" />
           <folding>
             <element signature="n#style#0;n#img#0;n#body#0;n#html#0;n#!!top" expanded="true" />
