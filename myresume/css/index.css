@@ -19,11 +19,6 @@
     color: #fff;
 }
 
-body {
-    background: url("../image/bg.jpg") center no-repeat;
-    background-size: 100%;
-}
-
 .section {
     background: rgba(0, 0, 0, 0.8);
 }
