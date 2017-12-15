@@ -29,8 +29,11 @@ body {
 }
 
 .mySelf {
+    background: url(https://vvvvvvvvvvip.github.io/new/myresume/image/myself.jpg) center center;
     width: 140px;
     height: 140px;
+    display: inline-block;
+    background-size: 72%;
     border-radius: 50%;
     opacity: 0;
     margin: 0 0 5%;
@@ -275,7 +278,7 @@ body {
 #section3.active .showOne {
     position: absolute;
     left: 40%;
-    top: 30px;
+    top: 60px;
     -webkit-transform: translate(-200%,240%) scale(1) rotate(-20deg);
     -moz-transform: translate(-200%,240%) scale(1) rotate(-20deg);
     -ms-transform: translate(-200%,240%) scale(1) rotate(-20deg);
@@ -289,7 +292,7 @@ body {
 
 #section3.active .showTwo {
     position: absolute;
-    top: 30px;
+    top: 60px;
     right: 40%;
     -webkit-transform: translate(200%,240%) scale(1) rotate(20deg);
     -moz-transform: translate(200%,240%) scale(1) rotate(20deg);
