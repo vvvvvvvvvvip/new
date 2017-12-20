@@ -1,4 +1,5 @@
 var a, b, c, d;
+var docNum = 0;
 $(function () {
     a = setInterval(time, 1000);
     var min = 0;
@@ -19,7 +20,7 @@ $(function () {
         var right2;
         if(!localStorage.getItem(count)){
             localStorage.setItem(count,right1);
-            var insertStr = "<div><span class='left'>最佳纪录" + count + "</span>" + right1 + "</div>";
+            var insertStr = "<div><span class='left'>最佳纪录" + "</span>" + right1 + "</div>";
         }else {
             //本地存储有的话right1和本地存储比较；哪一个时间短insertStr就是哪个，本地存储存成时间短的
             var localDoc = localStorage.getItem(count);
@@ -31,25 +32,25 @@ $(function () {
                 localStorage.setItem(count,localDoc);
             }else if($('#showtime span').eq(0).text() == $(".right2 .right span").eq(0).text()) {
                 if($('#showtime span').eq(2).text() > $(".right2 .right span").eq(2).text()){
-                    var insertStr = "<div><span class='left'>最佳纪录" + count + "</span>" + localDoc + "</div>";
+                    var insertStr = "<div><span class='left'>最佳纪录" + "</span>" + localDoc + "</div>";
                     localStorage.setItem(count,localDoc);
                 }else if($('#showtime span').eq(2).text() == $(".right2 .right span").eq(2).text()){
                     if($('#showtime span').eq(4).text() > $(".right2 .right span").eq(4).text()){
-                        var insertStr = "<div><span class='left'>最佳纪录" + count + "</span>" + localDoc + "</div>";
+                        var insertStr = "<div><span class='left'>最佳纪录" + "</span>" + localDoc + "</div>";
                         localStorage.setItem(count,localDoc);
                     }else if($('#showtime span').eq(4).text() == $(".right2 .right span").eq(4).text()){
-                        var insertStr = "<div><span class='left'>最佳纪录" + count + "</span>" + right1 + "</div>";
+                        var insertStr = "<div><span class='left'>最佳纪录" +  "</span>" + right1 + "</div>";
                         localStorage.setItem(count,right1);
                     }else {
-                        var insertStr = "<div><span class='left'>最佳纪录" + count + "</span>" + right1 + "</div>";
+                        var insertStr = "<div><span class='left'>最佳纪录" + "</span>" + right1 + "</div>";
                         localStorage.setItem(count,right1);
                     }
                 }else {
-                    var insertStr = "<div><span class='left'>最佳纪录" + count + "</span>" + right1 + "</div>";
+                    var insertStr = "<div><span class='left'>最佳纪录" + "</span>" + right1 + "</div>";
                     localStorage.setItem(count,right1);
                 }
             }else {
-                var insertStr = "<div><span class='left'>最佳纪录" + count + "</span>" + right1 + "</div>";
+                var insertStr = "<div><span class='left'>最佳纪录" + "</span>" + right1 + "</div>";
                 localStorage.setItem(count,right1);
             }
         }
@@ -149,13 +150,25 @@ $(function () {
                     $(".complete").show();
                     $("#showtime").hide();
                     $(".showtime").text("本次用时："+$("#showtime").text());
+                    $(".document").text("本次call值：" + docNum * 10);
+
+                    if(0<=docNum && docNum<6){
+                        $(".endWord").text('这你都不及格，亲！！！');
+                    } else if(6<=docNum && docNum<7){
+                        $(".endWord").text("蛮凑合的吗！！！");
+                    } else if(7<=docNum && docNum<8){
+                        $(".endWord").text("还有机会哦！！！");
+                    } else if(8<=docNum && docNum<9){
+                        $(".endWord").text("距离胜利还有一步之遥！！！");
+                    } else if(9<=docNum && docNum<=10){
+                        $(".endWord").text("؏؏☝ᖗ乛◡乛ᖘ☝؏؏完美！！！");
+                    }
                 } else {
                     $(".task .section").eq(i).hide();
                     $(".task .section").eq(i).removeAttr("mark");
                     $(".task .section").eq(i + 1).show();
 
                 }
-
             }
         }
     }
@@ -163,6 +176,7 @@ $(function () {
     $(".task .section p").on("click", function () {
         if ($(this).hasClass("rightPart")) {
             $(this).css("background", "green").css("border-radius","10px").css("color","#fff").addClass("disabled");
+            docNum++;
             $(this).siblings("p").addClass("disabled");
         } else {
             $(this).css("background", "red").css("border-radius","10px").css("color","#fff").addClass("disabled");
