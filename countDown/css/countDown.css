@@ -1,0 +1,196 @@
+body {
+    margin: 0;
+    text-align: center;
+}
+
+#record {
+    width: 100%;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bgPic {
+    height: 100%;
+}
+
+.timer {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 50px;
+    opacity: 0;
+    color: #171a1d;
+    text-shadow: 0px 2px 1px #fff;
+}
+
+.active {
+    -webkit-animation: go 1s ease-in-out;
+    -o-animation: go 1s ease-in-out;
+    animation: go 1s ease-in-out;
+}
+
+@-webkit-keyframes go {
+    0% {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%,-50%) scale(3);
+        opacity: 1;
+    }
+
+    100%{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%,-50%) scale(1);
+        opacity: 0;
+    }
+}
+
+@-o-keyframes go {
+    0% {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -o-transform: translate(-50%,-50%) scale(3);
+        opacity: 1;
+    }
+
+    100%{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -o-transform: translate(-50%,-50%) scale(1);
+        opacity: 0;
+    }
+}
+
+.showBox,.complete {
+    display: none;
+    font-size: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.showBox {
+    min-width: 300px;
+    text-align: center;
+}
+
+.complete {
+    line-height: 60px;
+    text-align: center;
+    width: 100%;
+}
+
+.section p {
+    cursor: pointer;
+}
+
+.rightColor {
+    color: red;
+}
+
+.wrongColor {
+    color: red;
+}
+
+.disabled {
+    pointer-events: none;
+    cursor: default;
+}
+
+.again {
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 5px;
+    border: 0;
+    background: tomato;
+    font-size: 14px;
+    margin: 0 auto;
+    color: #fff;
+}
+
+#showtime {
+    text-align: right;
+    margin-bottom: 50px;
+    text-shadow: 1px 1px 1px azure;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.section {
+    display: none;
+}
+
+.question {
+    width: 100%;
+    padding: 2px;
+    line-height: 40px;
+    background: lightyellow;
+    border-radius: 15px;
+    box-shadow: 0px 2px 10px chocolate inset;
+    font-size: 20px;
+    color: navy;
+}
+
+.section p {
+    width: 88%;
+    color: maroon;
+    margin: 20px auto;
+    line-height: 48px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#record .left {
+    color: brown;
+    font-size: 20px;
+}
+
+#record .right {
+    color: orangered;
+    font-size: 16px;
+}
+
+.bgPic {
+     background: url("../image/b.jpg") no-repeat center center;
+     background-size: 100%;
+ }
+
+@media screen and (min-width: 768px) {
+    .bgPic {
+        background-size: 30%;
+    }
+}
+
+@media screen and (max-width: 1040px) {
+    .bgPic {
+        background-size: 35%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .bgPic {
+        background-size: 40%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .bgPic {
+        background-size: 75%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .bgPic {
+        background-size: 100%;
+    }
+}
