@@ -21,47 +21,25 @@ $(function () {
             callNum = localStorage.getItem("docNum") * 10;
         }else {
             callNum = docNum * 10;
-         console.log(99);
         }
         var right1 = "<span class='right'>" + $('#showtime').html()+ "</span>";
         var fullScore = " <span class='setBg'>call值:</span>" + "<span class='setColor'>" + callNum + "</span>";
         var right2 = "<span class='right'>" + $('#showtime').html()+ "<span class='setBg'>call值:</span><span class='setColor'>100</span>" + "</span>";
         $(".callNum").text(callNum);
         if(!localStorage.getItem(count)){
-
             if($(".callNum").text() == 100){
                 localStorage.setItem(count,right1+fullScore);
-                console.log(localStorage.getItem(count));
                 var localDoc = localStorage.getItem(count);
                 $(".right2").html(localDoc);
-                console.log(localDoc);
                 var insertStr = "<div><span class='left'> 用时" + "</span>" + localDoc + "</div>";
             }else {
                 var insertStr = "<div><span class='left'>还未出现最佳成绩</div>";
-                $(".callNum").attr("firstMark","1");
-                $(".callNum").attr("firstMarkNum","1");
-                $(".callNum").attr("firstMarkAll","1");
-
             }
         }else {
-            //localStorage.setItem(count,right1+fullScore);
             var localDoc = localStorage.getItem(count);
             $(".right2").html(localDoc);
-            //console.log(localDoc);
-            //console.log($('#showtime').html());
-            //if($(".callNum").attr("firstMark") && $(".callNum").attr("firstMark") == 1){
-            //    localStorage.setItem(count,right1+fullScore);
-            //    console.log(localStorage.getItem(count));
-            //    var localDoc = localStorage.getItem(count);
-            //    var insertStr = "<div><span class='left'> 用时" + "</span>" + localDoc + "</div>";
-            //    $(".callNum").attr("firstMark","2");
-            //    $(".callNum").attr("firstMarkAll","2")
-            //}else
             if($(".callNum").text() == 100){
-                alert(1);
                 if($(".right2 .setColor").text() == 100 && $(".callNum").text() == 100){
-                    console.log($('#showtime span').eq(0).text() +$('#showtime span').eq(2).text() +$('#showtime span').eq(4).text());
-                    console.log($(".right2 .right span").eq(0).text()+$(".right2 .right span").eq(2).text()+$(".right2 .right span").eq(4).text());
                     if($('#showtime span').eq(0).text()>$(".right2 .right span").eq(0).text()){
                         var insertStr = "<div><span class='left'> 用时" + "</span>" + localDoc + "</div>";
                         localStorage.setItem(count,localDoc);

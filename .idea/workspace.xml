@@ -23,10 +23,10 @@
             <file leaf-file-name="countDown.js" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/countDown/js/countDown.js">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.33285612">
-                    <caret line="26" column="51" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="51" />
+                  <state vertical-scroll-proportion="-1.6284896">
+                    <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
                     <folding>
-                      <marker date="1513845844017" expanded="true" signature="7635:7648" placeholder="..." />
+                      <marker date="1513846063919" expanded="true" signature="6381:6394" placeholder="..." />
                     </folding>
                   </state>
                 </provider>
@@ -688,10 +688,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/countDown/js/countDown.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33285612">
-          <caret line="26" column="51" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="51" />
+        <state vertical-scroll-proportion="-1.6284896">
+          <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
           <folding>
-            <marker date="1513845844017" expanded="true" signature="7635:7648" placeholder="..." />
+            <marker date="1513846063919" expanded="true" signature="6381:6394" placeholder="..." />
           </folding>
         </state>
       </provider>
