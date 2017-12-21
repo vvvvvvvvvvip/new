@@ -1,5 +1,7 @@
 11种HTML5和CSS3炫酷文字样式和鼠标滑过特效效果演示
 http://www.htmleaf.com/Demo/201505141832.html
+9张动图带你解读JavaScript中排序算法（看完后记得练习哦）
+http://mp.weixin.qq.com/s/IyPwwD7pcflqJGA9hX_mjg
 参考网址layui
 http://www.layui.com/demo/table/style.html
 

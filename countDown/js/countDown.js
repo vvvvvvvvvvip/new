@@ -15,44 +15,87 @@ $(function () {
             return;
         }
         count++;
-
-        var right1 = "<span class='right'>" + $('#showtime').html() + "</span>";
-        var right2;
-        if(!localStorage.getItem(count)){
-            localStorage.setItem(count,right1);
-            var insertStr = "<div><span class='left'>最佳纪录" + "</span>" + right1 + "</div>";
+        var callNum;
+        if( docNum == 10){
+            localStorage.setItem("docNum",docNum);
+            callNum = localStorage.getItem("docNum") * 10;
         }else {
-            //本地存储有的话right1和本地存储比较；哪一个时间短insertStr就是哪个，本地存储存成时间短的
+            callNum = docNum * 10;
+         console.log(99);
+        }
+        var right1 = "<span class='right'>" + $('#showtime').html()+ "</span>";
+        var fullScore = " <span class='setBg'>call值:</span>" + "<span class='setColor'>" + callNum + "</span>";
+        var right2 = "<span class='right'>" + $('#showtime').html()+ "<span class='setBg'>call值:</span><span class='setColor'>100</span>" + "</span>";
+        $(".callNum").text(callNum);
+        if(!localStorage.getItem(count)){
+
+            if($(".callNum").text() == 100){
+                localStorage.setItem(count,right1+fullScore);
+                console.log(localStorage.getItem(count));
+                var localDoc = localStorage.getItem(count);
+                $(".right2").html(localDoc);
+                console.log(localDoc);
+                var insertStr = "<div><span class='left'> 用时" + "</span>" + localDoc + "</div>";
+            }else {
+                var insertStr = "<div><span class='left'>还未出现最佳成绩</div>";
+                $(".callNum").attr("firstMark","1");
+                $(".callNum").attr("firstMarkNum","1");
+                $(".callNum").attr("firstMarkAll","1");
+
+            }
+        }else {
+            //localStorage.setItem(count,right1+fullScore);
             var localDoc = localStorage.getItem(count);
             $(".right2").html(localDoc);
-            console.log(localDoc);
-            console.log($('#showtime').html());
-            if($('#showtime span').eq(0).text()>$(".right2 .right span").eq(0).text()){
-                var insertStr = "<div><span class='left'>最佳纪录" + count + "</span>" + localDoc + "</div>";
-                localStorage.setItem(count,localDoc);
-            }else if($('#showtime span').eq(0).text() == $(".right2 .right span").eq(0).text()) {
-                if($('#showtime span').eq(2).text() > $(".right2 .right span").eq(2).text()){
-                    var insertStr = "<div><span class='left'>最佳纪录" + "</span>" + localDoc + "</div>";
-                    localStorage.setItem(count,localDoc);
-                }else if($('#showtime span').eq(2).text() == $(".right2 .right span").eq(2).text()){
-                    if($('#showtime span').eq(4).text() > $(".right2 .right span").eq(4).text()){
-                        var insertStr = "<div><span class='left'>最佳纪录" + "</span>" + localDoc + "</div>";
+            //console.log(localDoc);
+            //console.log($('#showtime').html());
+            //if($(".callNum").attr("firstMark") && $(".callNum").attr("firstMark") == 1){
+            //    localStorage.setItem(count,right1+fullScore);
+            //    console.log(localStorage.getItem(count));
+            //    var localDoc = localStorage.getItem(count);
+            //    var insertStr = "<div><span class='left'> 用时" + "</span>" + localDoc + "</div>";
+            //    $(".callNum").attr("firstMark","2");
+            //    $(".callNum").attr("firstMarkAll","2")
+            //}else
+            if($(".callNum").text() == 100){
+                alert(1);
+                if($(".right2 .setColor").text() == 100 && $(".callNum").text() == 100){
+                    console.log($('#showtime span').eq(0).text() +$('#showtime span').eq(2).text() +$('#showtime span').eq(4).text());
+                    console.log($(".right2 .right span").eq(0).text()+$(".right2 .right span").eq(2).text()+$(".right2 .right span").eq(4).text());
+                    if($('#showtime span').eq(0).text()>$(".right2 .right span").eq(0).text()){
+                        var insertStr = "<div><span class='left'> 用时" + "</span>" + localDoc + "</div>";
                         localStorage.setItem(count,localDoc);
-                    }else if($('#showtime span').eq(4).text() == $(".right2 .right span").eq(4).text()){
-                        var insertStr = "<div><span class='left'>最佳纪录" +  "</span>" + right1 + "</div>";
-                        localStorage.setItem(count,right1);
+                    }else if($('#showtime span').eq(0).text() == $(".right2 .right span").eq(0).text()) {
+                        if($('#showtime span').eq(2).text() > $(".right2 .right span").eq(2).text()){
+                            var insertStr = "<div><span class='left'> 用时" + "</span>" + localDoc + "</div>";
+                            localStorage.setItem(count,localDoc);
+                        }else if($('#showtime span').eq(2).text() == $(".right2 .right span").eq(2).text()){
+                            if($('#showtime span').eq(4).text() > $(".right2 .right span").eq(4).text()){
+                                var insertStr = "<div><span class='left'> 用时" + "</span>" + localDoc + "</div>";
+                                localStorage.setItem(count,localDoc);
+                            }else if($('#showtime span').eq(4).text() == $(".right2 .right span").eq(4).text()){
+                                var insertStr = "<div><span class='left'> 用时" + "</span>" + localDoc + "</div>";
+                                localStorage.setItem(count,localDoc);
+                            }else {
+                                var insertStr = "<div><span class='left'> 用时" + "</span>" + right2 + "</div>";
+                                localStorage.setItem(count,right2);
+                            }
+                        }else {
+                            var insertStr = "<div><span class='left'> 用时" + "</span>" + right2 + "</div>";
+                            localStorage.setItem(count,right2);
+                        }
                     }else {
-                        var insertStr = "<div><span class='left'>最佳纪录" + "</span>" + right1 + "</div>";
-                        localStorage.setItem(count,right1);
+                        var insertStr = "<div><span class='left'> 用时" + "</span>" + right2 + "</div>";
+                        localStorage.setItem(count,right2);
                     }
                 }else {
-                    var insertStr = "<div><span class='left'>最佳纪录" + "</span>" + right1 + "</div>";
-                    localStorage.setItem(count,right1);
+                    console.log("");
                 }
             }else {
-                var insertStr = "<div><span class='left'>最佳纪录" + "</span>" + right1 + "</div>";
-                localStorage.setItem(count,right1);
+                var insertStr = "<div><span class='left'> 用时" + "</span>" + localDoc + "</div>";
             }
+
+
         }
         $("#record").prepend($(insertStr));
 
@@ -149,8 +192,8 @@ $(function () {
                     $(".task .section").eq(i).hide();
                     $(".complete").show();
                     $("#showtime").hide();
-                    $(".showtime").text("本次用时："+$("#showtime").text());
-                    $(".document").text("本次call值：" + docNum * 10);
+                    $(".showtime").html("<span>本次用时："+$("#showtime").text() + "</span>"+ "<span class='setColor' style='display: none'>"+ docNum*10 + "</span>");
+                    $(".document").html("本次call值：" + "<span>" + docNum * 10 + "</span>" );
 
                     if(0<=docNum && docNum<6){
                         $(".endWord").text('这你都不及格，亲！！！');

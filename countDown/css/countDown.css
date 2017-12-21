@@ -6,9 +6,15 @@ body {
 #record {
     width: 100%;
     position: absolute;
-    top: 15%;
+    top: 6%;
     left: 50%;
     transform: translateX(-50%);
+}
+
+#record h3 {
+    color: unset;
+    font-weight: inherit;
+    font-size: 20px;
 }
 
 .bgPic {
@@ -193,4 +199,14 @@ body {
     .bgPic {
         background-size: 100%;
     }
+}
+
+.setColor {
+    color: orangered;
+    font-size: 16px;
+}
+
+.setBg {
+    color: brown;
+    font-size: 20px;
 }
