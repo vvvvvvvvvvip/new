@@ -16,36 +16,41 @@
 
 .section {
     text-align: center;
-    /*font: 50px "Microsoft Yahei";*/
+    font: 20px "Microsoft Yahei";
     color: #fff;
 }
 
-.section1 {
-    background: url(http://idowebok.u.qiniudn.com/77/1.jpg) 50%;
+.circle {
+    width: 70%;
+    height: 60%;
+    margin: 0 auto;
+    position: relative;
+    background: lightpink;
+     border-radius: 62% 55% 142% 70%;
+    max-width: 600px;
 }
+/*.section2 {*/
+    /*background: url(http://idowebok.u.qiniudn.com/77/2.jpg) 50%;*/
+/*}*/
 
-.section2 {
-    background: url(http://idowebok.u.qiniudn.com/77/2.jpg) 50%;
-}
+/*.section3 {*/
+    /*background: url(http://idowebok.u.qiniudn.com/77/3.jpg) 50%;*/
+/*}*/
 
-.section3 {
-    background: url(http://idowebok.u.qiniudn.com/77/3.jpg) 50%;
-}
+/*.section4 {*/
+    /*background: url(http://idowebok.u.qiniudn.com/77/4.jpg) 50%;*/
+/*}*/
 
-.section4 {
-    background: url(http://idowebok.u.qiniudn.com/77/4.jpg) 50%;
-}
-
-img {
-    width: 60px;
-    height: 60px;
-    position: absolute;
-    right: 20px;
-    top: 60px;
-    border-radius: 50%;
-    animation: goRotate 16s linear infinite .1s;
-    z-index: 1;
-}
+/*img {*/
+    /*width: 60px;*/
+    /*height: 60px;*/
+    /*position: absolute;*/
+    /*right: 20px;*/
+    /*top: 60px;*/
+    /*border-radius: 50%;*/
+    /*animation: goRotate 16s linear infinite .1s;*/
+    /*z-index: 1;*/
+/*}*/
 
 @keyframes goRotate{
     0%{
@@ -92,24 +97,23 @@ ul li {
 /* Animation Two */
 #section1.active .animate {
     font-size: 30px;
+    width: 40%;
+    position: absolute;
+    right: 0;
+    transform: translate(-28%,-28%);
+    top: 30%;
 }
 
 #section1.active .animate span {
     display: inline-block;
 }
 
-#section1.active .animate span:nth-of-type(1) {
-    color: crimson;
-}
-
 #section1.active .animate span:nth-of-type(2) {
     animation-delay: .05s;
-    color: crimson;
 }
 
 #section1.active .animate span:nth-of-type(3) {
     animation-delay: .1s;
-    color: crimson;
 }
 
 #section1.active .animate span:nth-of-type(4) {
@@ -137,7 +141,6 @@ ul li {
 }
 
 #section1.active .two span {
-    color: lightseagreen;
     opacity: 0;
     transform: translate(200px, -100px) scale(3);
     animation: ballDrop .8s forwards;
@@ -216,5 +219,259 @@ ul li {
 
 #check:checked + label .xia {
     transform: rotate(-45deg);
+}
+
+
+/*µÚÒ»À¸*/
+.headPortrait{
+    opacity: 0;
+}
+
+#section1.active .headPortrait {
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%) scale(1) rotate(0deg);
+    -webkit-animation: headPic 2s ease;
+    -o-animation: headPic 2s ease;
+    animation: headPic 2s ease;
+    opacity: 1;
+}
+
+.headPortrait img {
+    /*width: 200px;*/
+    height: 200px;
+    border-radius: 50%;
+    border: 15px solid lightpink;
+}
+
+@keyframes headPic {
+    0%{
+        transform: translateY(-50%) scale(1.5) rotate(-45deg);
+    }
+
+    100% {
+        transform: translateY(-50%) scale(1) rotate(0deg);
+    }
+}
+
+@-webkit-keyframes headPic {
+    0%{
+        -webkit-transform: translateY(-50%) scale(1.5) rotate(-45deg);
+    }
+
+    100% {
+        -webkit-transform: translateY(-50%) scale(1) rotate(0deg);
+    }
+}
+
+@-moz-keyframes headPic {
+    0%{
+        -moz-transform: translateY(-50%) scale(1.5) rotate(-45deg);
+    }
+
+    100% {
+        -moz-transform: translateY(-50%) scale(1) rotate(0deg);
+    }
+}
+
+@-ms-keyframes headPic {
+    0%{
+        -ms-transform: translateY(-50%) scale(1.5) rotate(-45deg);
+    }
+
+    100% {
+        -ms-transform: translateY(-50%) scale(1) rotate(0deg);
+    }
+}
+
+@-o-keyframes headPic {
+    0%{
+        -o-transform: translateY(-50%) scale(1.5) rotate(-45deg);
+    }
+
+    100% {
+        -o-transform: translateY(-50%) scale(1) rotate(0deg);
+    }
+}
+
+.introduce {
+    opacity: 0;
+}
+
+#section1.active .introduce {
+    padding: 10px;
+     border-radius: 35px;
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    transform: translate(45%,-50%);
+    opacity: 1;
+    -webkit-animation: toggle 2s linear;
+    -o-animation: toggle 2s linear;
+    animation: toggle 2s linear;
+    background: pink;
+}
+
+.introduceWork {
+    position: absolute;
+    left: 18%;
+    top: 50%;
+    opacity: 0;
+    /*transform: translateY(50%) rotate(-10deg);*/
+}
+
+.introduceWork {
+    opacity: 0;
+}
+
+#section1.active .introduceWork {
+    opacity: 1;
+}
+
+@-webkit-keyframes toggle {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes toggle {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes toggle {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.introduce li {
+    border-bottom: 1px solid #d39e00;
+}
+
+.setBg {
+    background: url("../image/f.jpg") no-repeat center;
+    height: 100%;
+}
+
+.setBgColor {
+    width: 70%;
+    height: 125%;
+    background-color: lightpink;
+    /* float: right; */
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    overflow: hidden;
+}
+
+#section2.active {
+    overflow: hidden;
+}
+
+.myProduct {
+    position: absolute;
+    top: 50%;
+    transform: translate(-47%,-50%);
+    width: 100%;
+    /* border-radius: 48%; */
+    left: 50%;
+
+}
+
+.myProduct li {
+    height: 400px;
+    margin: 10px 30px;
+    background: pink;
+}
+
+.workIcon {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(-45deg);
+    border-radius: 30%;
+    background: lightpink;
+}
+
+.workTitle {
+    transform: translate(-50%,-50%) rotate(45deg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.right {
+    float: right;
+}
+
+#leftPo {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    max-height: 145px;
+}
+
+#leftPo li a,#rightPo li a {
+    text-decoration: none;
+    color: indianred;
+    font-size: 14px;
+}
+
+#rightPo {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    max-height: 145px;
+}
+
+.tecShow span {
+    padding: 3px 5px;
+    background-color: indianred;
+    font-size: 14px;
+    margin-right: 15px;
+}
+
+#experience,#tec {
+    padding: 10px;
+}
+
+#experience p {
+    font-size: 14px;
+    line-height: 20px;
+    text-align: left;
+}
+
+.markColor {
+    color: indianred;
 }
 

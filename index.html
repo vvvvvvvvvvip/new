@@ -14,9 +14,9 @@
     <script src="./js/index.js"></script>
 
     <script>
-        $(function(){
+        $(function () {
             $('#dowebok').fullpage({
-                sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90'],
+                sectionsColor: ['pink', 'pink', 'pink', 'pink'],
                 anchors: ['page1', 'page2', 'page3', 'page4'],
                 menu: '#menu'
             });
@@ -25,7 +25,8 @@
 </head>
 
 <body>
-<audio autoplay src="http://www.daiwei.org/vue/music/%E6%9E%97%E4%BF%8A%E6%9D%B0,%E8%94%A1%E5%8D%93%E5%A6%8D%20-%20%E5%B0%8F%E9%85%92%E7%AA%9D.mp3"></audio>
+<audio autoplay
+       src="http://www.daiwei.org/vue/music/%E6%9E%97%E4%BF%8A%E6%9D%B0,%E8%94%A1%E5%8D%93%E5%A6%8D%20-%20%E5%B0%8F%E9%85%92%E7%AA%9D.mp3"></audio>
 <!--<img src="./image/musicLogo.png" alt="" class="showMusicList"/>-->
 <div class="tableBox">
     <ul class="table table-hover">
@@ -40,46 +41,103 @@
         <li data-menuanchor="page4"><a href="#page4">设置</a></li>
     </ul>
 </div>
-    <div id="list">
-        <input type="checkbox" id="check">
-        <label for="check">
+<div id="list">
+    <input type="checkbox" id="check">
+    <label for="check">
               <span class="shang">
               </span>
               <span class="xia">
               </span>
-        </label>
-    </div>
-
+    </label>
+</div>
 
 
 <div id="dowebok">
-
     <div class="section section1" id="section1">
-        <div class="animate two">
-            <span>V</span>
-            <span>I</span>
-            <span>P</span>
-            <span>欢</span>
-            <span>迎</span>
-            <span>你</span>
-            <span>的</span>
-            <span>来</span>
-            <span>访</span>
+        <div class="circle">
+            <ul class="introduce">
+                <li>程燕        毕业于山西省财政税务专科学校</li>
+                <li>专业：电子商务</li>
+                <li>在职期间主要从事是pc网页端，手机移动端以及网站维护的工作。</li>
+                <li>我也是一直在边工作边学习</li>
+                <li>github：https://github.com/vvvvvvvvvvip</li>
+            </ul>
+            <div class="introduceWork">
+                <div class="animate two">
+                <span>前</span>
+                <span>端</span>
+                <span>工</span>
+                <span>程</span>
+                <span>师</span>
+                </div>
+            </div>
+            <div class="headPortrait">
+                <img src="./image/myself.jpg" alt="头像"/>
+            </div>
         </div>
-        <button></button>
-        <button></button>
     </div>
     <div class="section section2" id="section2">
-        <h3>第二屏</h3>
-        <p>请查看左上角，点击可以控制</p>
+       <div class="setBg">
+           <div class="setBgColor">
+               <ul class="row myProduct">
+                   <li class="col-lg-5 col-md-5 col-sm-5 col-xs-12" id="experience">
+                       <h3>工作经历</h3>
+                       <p class="markColor">2015--2016.06：校企合作原因实习于山西优逸客科技有限公司</p>
+                       <p>
+                           1.实习期间学习了解进行制作页面等练习，还学习了javascript,jquery,angular等一系列知识。
+                       </p>
+
+                       <p class="markColor">2016.06--至今：乐学汇通（北京）教育科技有限公司</p>
+                       <div>
+                           <p><a href="www.andclass.cn">官网地址</a></p>
+                           <p>1.熟练掌握css html js相关技术</p>
+                           <p>2.了解数据交互,利用ajax请求处理数据,进行前端渲染</p>
+                           <p>3.了解熟悉jquery,bootsprap的使用,以及响应式开发</p>
+                           <p>4.之前做过移动端h5嵌入app的项目,有一定移动端项目经验</p>
+                       </div>
+                   </li>
+                   <li class="col-lg-5 col-md-5 col-sm-5 col-xs-12" id="tec">
+                       <h3>技能标签</h3>
+                       <div class="tecShow">
+                           <span>html5/css3</span>
+                           <span>javascript</span>
+                           <span>jquery</span>
+                           <span>bootstrap</span>
+                           <span>materialize</span>
+                           <span>ionic</span>
+                           <span>vue</span>
+                           <span>angular</span>
+                       </div>
+                   </li>
+               </ul>
+           </div>
+       </div>
     </div>
     <div class="section section3" id="section3">
-        <h3>第三屏</h3>
-        <p>绑定的菜单没有默认的样式，你需要自行编写</p>
+        <div class="workIcon"><span class="workTitle">我的我的</span></div>
+        <div class="row">
+            <ul class="col-lg-5 col-md-5 col-sm-5 col-xs-12" id="leftPo">
+                <h3>早期网页制作</h3>
+                <li class=""><a href="http://vvvvvvvvvvip.github.io/dangdang/">练习当当网移动端</a></li>
+                <li class=""><a href="http://vvvvvvvvvvip.github.io/yidong/">练习制作中国移动网页</a></li>
+                <li class=""><a href="http://vvvvvvvvvvip.github.io/jingdong/">练习制作京东网页</a></li>
+                <li class=""><a href="http://vvvvvvvvvvip.github.io/yintai/">练习制作银泰网</a></li>
+                <li><a href="http://vvvvvvvvvvip.github.io">更多</a></li>
+            </ul>
+            <ul class="col-lg-5 col-md-5 col-sm-5 col-xs-12" id="rightPo">
+                <h3>在职期间空闲时候的作品</h3>
+                <li class=""><a href="http://vvvvvvvvvvip.github.io/new/pinlun">模仿淘宝评论以及划过图片区域放大效果</a></li>
+                <li class=""><a href="http://vvvvvvvvvvip.github.io/new/countDown">模仿2017年年末微博热搜期末考</a></li>
+                <li class=""><a href="http://vvvvvvvvvvip.github.io/new/jiqimao">机器猫</a></li>
+                <li class=""><a href="https://vvvvvvvvvvip.github.io/dist/#/mymusic">用vue2制作的音乐播放器（改进中）</a></li>
+            </ul>
+        </div>
+
     </div>
     <div class="section section4" id="section4">
-        <h3>第四屏</h3>
-        <p>这是最后一屏</p>
+        <h3>寄语</h3>
+
+        <p></p>
     </div>
 </div>
 <div class="module" style="display: none">
