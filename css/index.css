@@ -82,9 +82,10 @@ ul {
     list-style: none;
 }
 
-ul li {
+ul.introduce li {
     height: 40px;
     line-height: 40px;
+    font-size: 14px;
 }
 
 .singer {
@@ -245,7 +246,7 @@ ul li {
 }
 
 .headPortrait img {
-    /*width: 200px;*/
+    width: 200px;
     height: 200px;
     border-radius: 50%;
     border: 15px solid lightpink;
@@ -474,4 +475,3 @@ ul li {
 .markColor {
     color: indianred;
 }
-
