@@ -236,8 +236,8 @@ ul {
     color: aliceblue;
 }
 
-#tec {
-    padding: 10px;
+#tec,#myInfo {
+    padding: 0 15px;
 }
 
 #tec h3 {
@@ -246,4 +246,15 @@ ul {
 
 ul.introduce li {
     text-align: center;
+}
+
+#myInfo {
+    font-size: 14px;
+    padding: 0 15px;
+    position: absolute;
+    bottom: 0;
+}
+
+#myInfo p{
+    margin-bottom: 5px;
 }
