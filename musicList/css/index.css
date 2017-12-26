@@ -1,0 +1,125 @@
+ul,li {
+    list-style: none;
+}
+
+body,.head.row {
+    margin: 0;
+}
+
+.ad {
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.body {
+    height: 400px;
+    overflow: auto;
+}
+
+.body::-webkit-scrollbar {/*滚动条整体样式*/
+    width: 4px;     /*高宽分别对应横竖滚动条的尺寸*/
+    height: 4px;
+}
+.body::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    background: rgba(0,0,0,0.2);
+}
+.body::-webkit-scrollbar-track {/*滚动条里面轨道*/
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    border-radius: 0;
+    background: rgba(0,0,0,0.1);
+}
+
+.body .bodyContent {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.head div {
+    color: #f3f3f3;
+}
+
+.body .bodyContent div {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #f3f3f3;
+}
+
+.head div {
+    height: 40px;
+    line-height: 40px;
+}
+
+.singerInfo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.bgColor {
+    background: rgba(0,0,0,0.3);
+}
+
+.singerInfo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+}
+
+.singerInfo img {
+    transform: rotate(0deg);
+    -webkit-animation: circle 8s infinite linear;
+    -o-animation: circle 8s infinite linear;
+    animation: circle 8s infinite linear;
+}
+
+@keyframes circle {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+audio {
+    width: 70%;
+    position: absolute;
+    left: 130px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+#singerPic {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+}
+
+.buttonDiv {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}

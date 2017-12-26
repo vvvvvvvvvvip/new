@@ -187,15 +187,6 @@ var data = {
                 "lyric": ""
             },
             {
-                "id": "24",
-                "name": "童话镇",
-                "singer": "陈一发儿",
-                "img_url": "http://oiq8j9er1.bkt.clouddn.com/music_%E7%AB%A5%E8%AF%9D%E9%95%87.jpg",
-                "url": "www.daiwei.org/vue/music/陈一发儿%20-%20童话镇.mp3",
-                "type": "华语",
-                "lyric": ""
-            },
-            {
                 "id": "23",
                 "name": "Viva La Vida",
                 "singer": "David Garrett",
@@ -292,6 +283,60 @@ var data = {
                 "img_url": "http://www.daiwei.org/index/music/musicImg/Faded.jpg",
                 "url": "http://www.daiwei.org/vue/music/Alan%20Walker%20-%20Faded.mp3",
                 "type": "纯音乐 电音",
+                "lyric": ""
+            },
+            {
+                "id": "2",
+                "name": "你的爱",
+                "singer": "王力宏",
+                "img_url": "http://www.daiwei.org/index/music/musicImg/王力宏-你的爱.jpg",
+                "url": "http://www.daiwei.org/vue/music/%E7%8E%8B%E5%8A%9B%E5%AE%8F%20-%20%E4%BD%A0%E7%9A%84%E7%88%B1.mp3",
+                "type": "华语",
+                "lyric": ""
+            },
+            {
+                "id": "2",
+                "name": "你的爱",
+                "singer": "王力宏",
+                "img_url": "http://www.daiwei.org/index/music/musicImg/王力宏-你的爱.jpg",
+                "url": "http://www.daiwei.org/vue/music/%E7%8E%8B%E5%8A%9B%E5%AE%8F%20-%20%E4%BD%A0%E7%9A%84%E7%88%B1.mp3",
+                "type": "华语",
+                "lyric": ""
+            },
+            {
+                "id": "2",
+                "name": "你的爱",
+                "singer": "王力宏",
+                "img_url": "http://www.daiwei.org/index/music/musicImg/王力宏-你的爱.jpg",
+                "url": "http://www.daiwei.org/vue/music/%E7%8E%8B%E5%8A%9B%E5%AE%8F%20-%20%E4%BD%A0%E7%9A%84%E7%88%B1.mp3",
+                "type": "华语",
+                "lyric": ""
+            },
+            {
+                "id": "2",
+                "name": "你的爱",
+                "singer": "王力宏",
+                "img_url": "http://www.daiwei.org/index/music/musicImg/王力宏-你的爱.jpg",
+                "url": "http://www.daiwei.org/vue/music/%E7%8E%8B%E5%8A%9B%E5%AE%8F%20-%20%E4%BD%A0%E7%9A%84%E7%88%B1.mp3",
+                "type": "华语",
+                "lyric": ""
+            },
+            {
+                "id": "2",
+                "name": "你的爱",
+                "singer": "王力宏",
+                "img_url": "http://www.daiwei.org/index/music/musicImg/王力宏-你的爱.jpg",
+                "url": "http://www.daiwei.org/vue/music/%E7%8E%8B%E5%8A%9B%E5%AE%8F%20-%20%E4%BD%A0%E7%9A%84%E7%88%B1.mp3",
+                "type": "华语",
+                "lyric": ""
+            },
+            {
+                "id": "2",
+                "name": "你的爱",
+                "singer": "王力宏",
+                "img_url": "http://www.daiwei.org/index/music/musicImg/王力宏-你的爱.jpg",
+                "url": "http://www.daiwei.org/vue/music/%E7%8E%8B%E5%8A%9B%E5%AE%8F%20-%20%E4%BD%A0%E7%9A%84%E7%88%B1.mp3",
+                "type": "华语",
                 "lyric": ""
             },
             {
