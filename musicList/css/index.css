@@ -123,3 +123,9 @@ audio {
     left: 50%;
     transform: translateX(-50%);
 }
+
+@media screen and (max-width: 320px) {
+    .body {
+        height: 275px;
+    }
+}
