@@ -169,15 +169,6 @@ var data = {
                 "lyric": ""
             },
             {
-                "id": "26",
-                "name": "Color-X 3D",
-                "singer": "徐梦圆",
-                "img_url": "http://oiq8j9er1.bkt.clouddn.com/music_color-3d.jpg",
-                "url": "http://www.daiwei.org/index/music/%E6%88%91%E6%98%AF%E7%88%B1%E9%9F%B3%E4%B9%90%E7%9A%84%E5%BE%90%E6%A2%A6%E5%9C%86%20-%20color-X%203D.mp3",
-                "type": "纯音乐 电音",
-                "lyric": ""
-            },
-            {
                 "id": "25",
                 "name": "外面的世界",
                 "singer": "莫文蔚 ",
@@ -287,55 +278,10 @@ var data = {
             },
             {
                 "id": "2",
-                "name": "你的爱",
-                "singer": "王力宏",
-                "img_url": "http://www.daiwei.org/index/music/musicImg/王力宏-你的爱.jpg",
-                "url": "http://www.daiwei.org/vue/music/%E7%8E%8B%E5%8A%9B%E5%AE%8F%20-%20%E4%BD%A0%E7%9A%84%E7%88%B1.mp3",
-                "type": "华语",
-                "lyric": ""
-            },
-            {
-                "id": "2",
-                "name": "你的爱",
-                "singer": "王力宏",
-                "img_url": "http://www.daiwei.org/index/music/musicImg/王力宏-你的爱.jpg",
-                "url": "http://www.daiwei.org/vue/music/%E7%8E%8B%E5%8A%9B%E5%AE%8F%20-%20%E4%BD%A0%E7%9A%84%E7%88%B1.mp3",
-                "type": "华语",
-                "lyric": ""
-            },
-            {
-                "id": "2",
-                "name": "你的爱",
-                "singer": "王力宏",
-                "img_url": "http://www.daiwei.org/index/music/musicImg/王力宏-你的爱.jpg",
-                "url": "http://www.daiwei.org/vue/music/%E7%8E%8B%E5%8A%9B%E5%AE%8F%20-%20%E4%BD%A0%E7%9A%84%E7%88%B1.mp3",
-                "type": "华语",
-                "lyric": ""
-            },
-            {
-                "id": "2",
-                "name": "你的爱",
-                "singer": "王力宏",
-                "img_url": "http://www.daiwei.org/index/music/musicImg/王力宏-你的爱.jpg",
-                "url": "http://www.daiwei.org/vue/music/%E7%8E%8B%E5%8A%9B%E5%AE%8F%20-%20%E4%BD%A0%E7%9A%84%E7%88%B1.mp3",
-                "type": "华语",
-                "lyric": ""
-            },
-            {
-                "id": "2",
-                "name": "你的爱",
-                "singer": "王力宏",
-                "img_url": "http://www.daiwei.org/index/music/musicImg/王力宏-你的爱.jpg",
-                "url": "http://www.daiwei.org/vue/music/%E7%8E%8B%E5%8A%9B%E5%AE%8F%20-%20%E4%BD%A0%E7%9A%84%E7%88%B1.mp3",
-                "type": "华语",
-                "lyric": ""
-            },
-            {
-                "id": "2",
-                "name": "你的爱",
-                "singer": "王力宏",
-                "img_url": "http://www.daiwei.org/index/music/musicImg/王力宏-你的爱.jpg",
-                "url": "http://www.daiwei.org/vue/music/%E7%8E%8B%E5%8A%9B%E5%AE%8F%20-%20%E4%BD%A0%E7%9A%84%E7%88%B1.mp3",
+                "name": "带你去旅行",
+                "singer": "校长",
+                "img_url": "https://gss2.bdstatic.com/-fo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=0cfd1a1814178a82da3177f2976a18e8/902397dda144ad34d7596753daa20cf430ad8504.jpg",
+                "url": "http://sc1.111ttt.cn/97301815582.mp3#.mp3",
                 "type": "华语",
                 "lyric": ""
             },
