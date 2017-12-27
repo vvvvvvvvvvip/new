@@ -84,7 +84,7 @@ ul {
 }
 
 .workTotal ul li {
-    text-align: left;
+    text-align: center;
     text-indent: 2em;
 }
 
@@ -227,6 +227,10 @@ ul {
     font-weight: bolder;
 }
 
+#leftPo,#rightPo {
+    text-align: center;
+}
+
 .tecShow span {
     padding: 3px 5px;
     background-color: indianred;
@@ -238,6 +242,11 @@ ul {
 
 #tec,#myInfo {
     padding: 0 15px;
+}
+
+#tec {
+    text-align: center;
+    margin: 0 auto;
 }
 
 #tec h3 {
@@ -253,8 +262,17 @@ ul.introduce li {
     padding: 0 15px;
     position: absolute;
     bottom: 0;
+    text-align: center;
+    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
 }
 
 #myInfo p{
     margin-bottom: 5px;
+}
+
+#experience {
+    margin: 0 auto;
 }

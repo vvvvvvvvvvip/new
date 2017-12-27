@@ -17,6 +17,28 @@ $(function () {
     $(".body .bodyContent").eq(0).attr("data-click", "1").addClass("bgColor");
     x.play();
 
+    //播放完之后自动播放下一首
+    x.onended = function() {
+        for (var i = 0; i < songLen; i++) {
+            if ($(".body .bodyContent").eq(i).attr("data-click") && $(".body .bodyContent").eq(i).attr("data-click") == 1) {
+                if (i == songLen - 1) {
+                    console.log(1);
+                } else {
+                    $(".body .bodyContent").eq(i).removeAttr("data-click").removeClass("bgColor");
+                    $(".body .bodyContent").eq(i + 1).attr("data-click", "1").addClass("bgColor");
+                    url = $(".body .bodyContent").eq(i + 1).find(".otherInfo").attr("data-url");
+                    src = $(".body .bodyContent").eq(i + 1).find(".otherInfo").attr("data-src");
+                    $("audio").attr("src", src);
+                    $(".singerInfo img").attr("src", url);
+                    x.play();
+                    $(".play").find("span").removeClass("glyphicon-play").addClass("glyphicon-pause");
+                    $(".play").addClass("pause").removeClass("play");
+                    return false;
+                }
+            }
+        }
+    };
+
     //打开关闭音乐播放器
     $('.showMusicList').click(function () {
         showMusicList();
@@ -98,7 +120,6 @@ $(function () {
                 }
             }
         }
-
     })
 })
 function showMusicList() {
