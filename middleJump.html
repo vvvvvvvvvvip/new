@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,minimum-scale=1,maximum-scale=1,minimal-ui,user-scalable=no">
+    <title>个人主页</title>
+    <link rel="Shortcut Icon" href="./image/icon.ico" type="image/x-icon">
+    <link rel="icon" href="./image/icon.ico" type="image/x-icon">
+    <script src="./js/jquery.min.js"></script>
+    <script>
+        $(function(){
+            //检测浏览器类型，是否是移动端
+            var sUserAgent = navigator.userAgent.toLowerCase();
+            var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+            var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+            var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+            var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+            var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+            var bIsAndroid = sUserAgent.match(/android/i) == "android";
+            var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+            var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+
+            if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+            //移动端
+                window.location.href = "phone/index.html";
+            } else {
+            //pc端
+                window.location.href = "PCIndex.html";
+            }
+        })
+    </script>
+</head>
+
+<body>
+</body>
+</html>
