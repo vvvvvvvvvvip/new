@@ -35,13 +35,13 @@ $(function(){
         for(var i=0;i<data.all.length;i++){
             if($(".content .model").eq(i).attr("show")&&$(".content .model").eq(i).attr("show")=="true"){
                 $(".content .model").eq(i).addClass("showTrue").siblings(".model").hide();
-                $(".iconChange").show();
+                $(".collapse").show();
                 $(".homeIcon").hide();
             }
         }
     })
 
-    $("body").on("click",".iconChange",function(){
+    $("body").on("click",".collapse",function(){
         for(var i=0;i<data.all.length;i++){
             if($(".content .model").eq(i).attr("show")&&$(".content .model").eq(i).attr("show")=="true"){
                 $(".content .model").eq(i).removeClass("showTrue").siblings(".model").show();
@@ -49,5 +49,37 @@ $(function(){
         }
         $(this).hide();
         $(".homeIcon").show();
+    })
+
+    $(".homeIcon").on("click",function(){
+        window.location.href = "middleJump.html";
+    })
+
+    $(".leftIcon").on("click",function(){
+        for(var i=0;i< $(".Carousel img").length;i++) {
+            if (i == 0 && $(".Carousel img").eq(i).attr("showBg") && $(".Carousel img").eq(i).attr("showBg") == "true") {
+                console.log("第一张");
+            } else {
+                if ($(".Carousel img").eq(i).attr("showBg") && $(".Carousel img").eq(i).attr("showBg") == "true") {
+                    $(".Carousel img").eq(i).removeAttr("showBg").fadeOut();
+                    $(".Carousel img").eq(i - 1).attr("showBg", "true").fadeIn();
+                    return false;
+                }
+            }
+        }
+    })
+
+    $(".rightIcon").on("click",function(){
+        for(var i=0;i< $(".Carousel img").length;i++){
+            if(i == $(".Carousel img").length-1 && $(".Carousel img").eq(i).attr("showBg") && $(".Carousel img").eq(i).attr("showBg")=="true"){
+                console.log("最后一张");
+            }else {
+                if($(".Carousel img").eq(i).attr("showBg") && $(".Carousel img").eq(i).attr("showBg") == "true"){
+                    $(".Carousel img").eq(i).removeAttr("showBg").fadeOut();
+                    $(".Carousel img").eq(i+1).attr("showBg","true").fadeIn();
+                    return false;
+                }
+            }
+        }
     })
 })
