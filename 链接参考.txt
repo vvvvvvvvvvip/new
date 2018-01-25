@@ -54,6 +54,14 @@ vue引用css文章参考如下：
 http://blog.csdn.net/liwusen/article/details/53519342?utm_source=itdadao&utm_medium=referral
 vue用到的css地址
 https://vux.li/#/
+vuex--store安装引入
+http://blog.csdn.net/sinat_17775997/article/details/78058981
+http://blog.csdn.net/h5_queenstyle12/article/details/75386359
+vue--element-ui安装
+http://blog.csdn.net/u012285967/article/details/53023825
+http://element.eleme.io/#/zh-CN/component/layout
+https://segmentfault.com/a/1190000011023102
+
 
 vue文档
 1. 开发pc端网页，element-ui。
