@@ -52,7 +52,7 @@ $(function(){
     })
 
     $(".homeIcon").on("click",function(){
-        window.location.href = "middleJump.html";
+        //window.location.href = "middleJump.html";
     })
 
     $(".leftIcon").on("click",function(){
