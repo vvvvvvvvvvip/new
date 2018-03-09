@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,height=device-height,initial-scale=1,minimum-scale=1,maximum-scale=1,minimal-ui,user-scalable=no">
+    <title>pc端vue的音乐列表</title>
+    <link rel="stylesheet" href="css/mescroll.min.css"/>
+</head>
+<style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+        background-color: white;
+        min-width: 1300px;
+    }
+
+    ul {
+        list-style-type: none
+    }
+
+    /*展示上拉加载的数据列表*/
+    .data-list li {
+        position: relative;
+        padding: 10px 8px 10px 120px;
+        border-bottom: 1px solid #eee;
+        height: 48px;
+        line-height: 48px;
+        background-color: #d1ecf1;
+        cursor: pointer;
+    }
+    .data-list li div {
+        margin: 0 20px;
+    }
+    .pd-name {
+        width: 200px;
+        max-width: 200px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .pd-singer {
+        width: 150px;
+        max-width: 150px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .pd-type {
+        width: 100px;
+        max-width: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .pd-dutation {
+        width: 100px;
+        max-width: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .left{
+        float: left;
+    }
+    .pd-img,.pd-audio {
+        position: absolute;
+        right: 18px;
+        top: 18px;
+        width: 150px;
+        height: 150px;
+        z-index: 1;
+        border-radius: 50%;
+    }
+    #icon {
+        position: absolute;
+        right: 18px;
+        top: 185px;
+        z-index: 1;
+        background-color: ghostwhite;
+        width: 150px;
+        text-align: center;
+    }
+    #icon span {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        margin-right: 15px;
+    }
+    #icon span:nth-last-child(1){
+        margin-right: 0;
+    }
+    .leftIcon {
+        background: url("./image/left.png") no-repeat center center;
+        background-size: 100%;
+    }
+    .pauseIcon {
+        background: url("./image/pause.png") no-repeat center center;
+        background-size: 100%;
+    }
+    .playIcon {
+        background: url("./image/play.png") no-repeat center center;
+        background-size: 100%;
+    }
+    .rightIcon {
+        background: url("./image/right.png") no-repeat center center;
+        background-size: 100%;
+    }
+</style>
+<body>
+
+<div id="mescroll" class="mescroll">
+    <div id="icon">
+        <span class="leftIcon"></span>
+        <span :class="middleIcon?'playIcon':'pauseIcon'" @click="isPlay()"></span>
+        <span class="rightIcon"></span>
+    </div>
+    <div v-model="pdImg">
+        <audio id="audio" class="pd-audio" :src="pdAudio" v-model="pdAudio"></audio>
+        <img class="pd-img" :src="pdImg"/>
+    </div>
+    <!--id可以改,而"mescroll"的class不能删-->
+    <!--列表内容,如:<ul>列表数据</ul> ...-->
+    <!--<p class="btn-change">模拟后台修改商品信息</p>-->
+    <!--&lt;!&ndash;http://www.jq22.com/demo/mescroll-master201710082208/demo/base/list-products.html&ndash;&gt;-->
+    <!--展示上拉加载的数据列表-->
+    <ul class="data-list" id="dataList">
+        <li v-for="(pd,index) in pdList" @click="getIndex(index)">
+            <div class="left pd-name">{{ pd.name }}</div>
+            <div class="left pd-singer">{{ pd.singer }}</div>
+            <div class="left pd-type">{{ pd.type }}</div>
+            <div class="left pd-dutation">3:30</div>
+        </li>
+    </ul>
+</div>
+<script src="https://cdn.bootcss.com/vue/2.5.13/vue.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<!--<script src="./js/jquery.min.js"></script>-->
+<!--<script src="./musicList/js/musicVue.js"></script>-->
+<script src="./js/mescroll.js"></script>
+<script type="text/javascript" charset="utf-8">
+    //创建vue对象
+    var vm = new Vue({
+        el: "#mescroll",
+        data: {
+            mescroll: null,
+            pdList: [],
+            middleIcon: true,
+            pdImg: 'http://oiq8j9er1.bkt.clouddn.com/music_%E6%88%91%E8%BF%98%E6%83%B3%E5%A5%B9.jpg',
+            pdAudio: 'http://www.daiwei.org/vue/music/%E6%9E%97%E4%BF%8A%E6%9D%B0,%E8%94%A1%E5%8D%93%E5%A6%8D%20-%20%E5%B0%8F%E9%85%92%E7%AA%9D.mp3'
+        },
+        mounted: function() {
+            //创建MeScroll对象,down可以不用配置,因为内部已默认开启下拉刷新,重置列表数据为第一页
+            //解析: 下拉回调默认调用mescroll.resetUpScroll(); 而resetUpScroll会将page.num=1,再执行up.callback,从而实现刷新列表数据为第一页;
+            var self = this;
+            console.log(this);
+            self.mescroll = new MeScroll("mescroll", {
+                up: {
+                    callback: self.upCallback, //上拉回调
+                    //以下参数可删除,不配置
+                    //page:{size:8}, //可配置每页8条数据,默认10
+                    toTop:{ //配置回到顶部按钮
+                        src : "../res/img/mescroll-totop.png", //默认滚动到1000px显示,可配置offset修改
+                        //offset : 1000
+                    },
+                    empty:{ //配置列表无任何数据的提示
+                        warpId:"dataList",
+                        icon : "../res/img/mescroll-empty.png" ,
+//						  	tip : "亲,暂无相关数据哦~" ,
+//						  	btntext : "去逛逛 >" ,
+//						  	btnClick : function() {
+//						  		alert("点击了去逛逛按钮");
+//						  	}
+                    }
+                }
+            });
+
+            //初始化vue后,显示vue模板布局
+            document.getElementById("dataList").style.display="block";
+        },
+        //监听audio 发生变化
+        watch: {
+            pdAudio: function(pdAudio){
+                console.log(pdAudio)
+                this.playMusic()
+            }
+        },
+        methods: {
+            isPlay: function(){
+                console.log(this)
+                var audio = document.querySelector('#audio')
+                if(this.middleIcon === true){
+                    this.middleIcon = false
+                    audio.play()
+                }else {
+                    this.middleIcon = true
+                    audio.pause()
+                }
+            },
+            getIndex: function(index){
+                console.log(index)
+                console.log(this)
+                this.pdImg = this.pdList[index].img_url
+                this.pdAudio = this.pdList[index].url
+            },
+           playMusic: function(){
+               var audio = document.querySelector('#audio');
+               this.middleIcon = false
+               audio.play()
+               return false
+           },
+            //上拉回调 page = {num:1, size:10}; num:当前页 ,默认从1开始; size:每页数据条数,默认10
+            upCallback: function(page) {
+                console.log("page.num=="+page.num+", page.size=="+page.size);
+                //联网加载数据
+                var self = this;
+                console.log(this);
+                getListDataFromNet(page.num, page.size, function(data) {
+                    //data=[]; //打开本行注释,可演示列表无任何数据empty的配置
+
+                    //如果是第一页需手动制空列表
+                    if(page.num == 1) self.pdList = [];
+
+                    //更新列表数据
+                    self.pdList = self.pdList.concat(data);
+                    console.log("self.pdList.length==" + self.pdList.length);
+
+                    //联网成功的回调,隐藏下拉刷新和上拉加载的状态;
+                    //传参:数据的总数; mescroll会自动判断列表是否有无下一页数据,如果数据不满一页则提示无更多数据;
+                    self.mescroll.endSuccess(data.length);
+
+                }, function() {
+                    //联网失败的回调,隐藏下拉刷新和上拉加载的状态;
+                    self.mescroll.endErr();
+                });
+            },
+        },
+    });
+
+    /*联网加载列表数据*/
+    function getListDataFromNet(pageNum,pageSize,successCallback,errorCallback) {
+        //延时一秒,模拟联网
+        setTimeout(function () {
+            axios.get("https://vvvvvvvvvvip.github.io/dist/static/data.json", {
+                params: {
+                    num: pageNum, //页码
+                    size: pageSize //每页长度
+                }
+            })
+                    .then(function(response) {
+                        console.log(response.data)
+                        var data=response.data.music.all; // 模拟数据: ../res/pdlist1.js
+                        var listData=[];//模拟分页数据
+                        for (var i = (pageNum-1)*pageSize; i < pageNum*pageSize; i++) {
+                            if(i==data.length) break;
+                            listData.push(data[i]);
+                        }
+                        successCallback&&successCallback(listData);//成功回调
+                    })
+                    .catch(function(error) {
+                        errorCallback&&errorCallback()//失败回调
+                    });
+        },500)
+    }
+
+    //禁止PC浏览器拖拽图片,避免与下拉刷新冲突;如果仅在移动端使用,可删除此代码
+    document.ondragstart=function() {return false;}
+</script>
+</body>
+</html>

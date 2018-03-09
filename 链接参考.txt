@@ -64,6 +64,7 @@ https://segmentfault.com/a/1190000011023102
 
 
 vue文档
+https://www.vue-js.com/topic/58abbd21a9c1282817afc28d
 链接：https://pan.baidu.com/s/1jKna5RC 密码：zjwl
 1. 开发pc端网页，element-ui。
 2. 移动端，vux或muni-ui。
