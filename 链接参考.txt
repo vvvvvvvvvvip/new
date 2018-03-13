@@ -79,6 +79,7 @@ https://router.vuejs.org/zh-cn/index.html
 链接：http://pan.baidu.com/s/1o884eCi 密码：010c
 
 微信小程序链接
+https://pan.baidu.com/s/1DWo2hvVN8W0fjMsmNvgVcA
 链接：http://pan.baidu.com/s/1qYzCuew 密码：k5tw
 链接：http://pan.baidu.com/s/1pK8R78R 密码：1j3g
 微信分享的实例 

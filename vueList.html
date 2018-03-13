@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,height=device-height,initial-scale=1,minimum-scale=1,maximum-scale=1,minimal-ui,user-scalable=no">
+    <title>vue表单信息动态添加</title>
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet">
+</head>
+<style>
+    body {
+        padding: 20px;
+    }
+    #mask {
+        background: rgba(0, 0, 0, .5);
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: 4;
+        top: 0;
+        left: 0;
+    }
+
+    .mask {
+        width: 300px;
+        height: 250px;
+        background: rgba(255, 255, 255, 1);
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        z-index: 47;
+        border-radius: 5px;
+    }
+
+    .title {
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .title span {
+        float: right;
+        cursor: pointer;
+    }
+
+    .content {
+        padding: 10px;
+    }
+
+    .content input {
+        width: 270px;
+        margin-bottom: 15px;
+    }
+    .show {
+        display: block;
+    }
+    .hide {
+        display: none;
+    }
+</style>
+<body>
+<div id="layOut">
+    <form>
+        <div class="form-group">
+            <label for="userName">姓名</label>
+            <input type="text" class="form-control" id="userName" placeholder="姓名" v-model="userName">
+        </div>
+        <div class="form-group">
+            <label for="age">年龄</label>
+            <input type="number" class="form-control" id="age" placeholder="年龄" v-model="age">
+        </div>
+        <div class="form-group">
+            <label for="phone">手机（电话）</label>
+            <input type="number" class="form-control" id="phone" placeholder="联系方式" v-model="phone" maxlength="11">
+        </div>
+        <!--<div class="form-group">-->
+        <!--<label for="exampleInputFile">File input</label>-->
+        <!--<input type="file" id="exampleInputFile">-->
+        <!--<p class="help-block">Example block-level help text here.</p>-->
+        <!--</div>-->
+        <!--<div class="checkbox">-->
+        <!--<label>-->
+        <!--<input type="checkbox"> Check me out-->
+        <!--</label>-->
+        <!--</div>-->
+        <button type="button" class="btn btn-success" @click="add()">添加</button>
+        <button type="button" class="btn btn-warning" @click="reset()">重置</button>
+    </form>
+    <div class="table-responsive">
+        <table class="table">
+            <caption>Optional table caption.</caption>
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>手机（电话）</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="(item,index) in myData">
+                <th scope="row">{{ index+1 }}</th>
+                <td>{{ item.name }}</td>
+                <td>{{ item.age }}</td>
+                <td>{{ item.phone }}</td>
+                <td>
+                    <button type="button" class="btn btn-danger"
+                            @click="remove(index)">删除
+                    </button>
+                    <button type="button" class="btn btn-danger"
+                            @click="edit(index)">编辑
+                    </button>
+                </td>
+            </tr>
+            <!--<tr>-->
+            <!--<th scope="row">2</th>-->
+            <!--<td>Jacob</td>-->
+            <!--<td>Thornton</td>-->
+            <!--<td>@fat</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+            <!--<th scope="row">3</th>-->
+            <!--<td>Larry</td>-->
+            <!--<td>the Bird</td>-->
+            <!--<td>@twitter</td>-->
+            <!--</tr>-->
+            </tbody>
+        </table>
+    </div>
+</div>
+<!--模态框 弹出框-->
+<div id="mask" v-show="editList" :class="[editList?'show':'hide']">
+    <div class="mask">
+        <div class="title">
+            编辑
+			<span @click="editlist=false">
+                X
+            </span>
+        </div>
+        <div class="content">
+            <input type="text" v-model="editDetail.title" name="name" value="" placeholder="姓名" />
+            <input type="number" v-model="editDetail.user" name="age" value="" placeholder="年龄" />
+            <input type="number" v-model="editDetail.dates" name="phone" value="" placeholder="联系方式" />
+            <button @click="update">更新</button>
+            <button @click="editlist=false">取消</button>
+        </div>
+    </div>
+</div>
+</div>
+
+<script src="https://cdn.bootcss.com/vue/2.5.13/vue.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+    var vm = new Vue({
+        el: '#layOut',
+        data: {
+            userName: '',
+            age: '',
+            phone: '',
+            myData: [],
+            editName: '',
+            editAge: '',
+            editPhone: '',
+            editList: false
+        },
+        methods: {
+            add: function () {
+                console.log(this)
+                if (this.userName === '') {
+                    alert("姓名不能为空")
+                } else if (this.age === '') {
+                    alert("年龄不能为空")
+                } else if (this.phone === '') {
+                    alert("联系方式不能为空")
+                } else {
+                    this.myData.push({
+                        name: this.userName,
+                        age: this.age,
+                        phone: this.phone
+                    })
+                    this.userName = ''
+                    this.age = ''
+                    this.phone = ''
+                }
+            },
+            reset: function () {
+                this.userName = ''
+                this.age = ''
+                this.phone = ''
+            },
+            remove: function (index) {
+                console.log(this)
+                console.log(index)
+                this.myData.splice(index,1)
+            },
+            edit: function(index){
+                console.log(this)
+                console.log(index)
+                this.isShow = !this.isShow
+                this.editName =this.myData[index].name
+                this.editAge = this.myData[index].age
+                this.editPhone  = this.myData[index].phone
+            }
+        }
+    })
+</script>
+</body>
+</html>
