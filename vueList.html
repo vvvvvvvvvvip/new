@@ -53,11 +53,9 @@
         width: 270px;
         margin-bottom: 15px;
     }
-    .show {
-        display: block;
-    }
-    .hide {
-        display: none;
+
+    form {
+        margin-bottom: 20px;
     }
 </style>
 <body>
@@ -69,28 +67,18 @@
         </div>
         <div class="form-group">
             <label for="age">年龄</label>
-            <input type="number" class="form-control" id="age" placeholder="年龄" v-model="age">
+            <input type="number" class="form-control" id="age" placeholder="年龄" v-model="age" oninput="if(value.length>3)value=value.slice(0,3)">
         </div>
         <div class="form-group">
             <label for="phone">手机（电话）</label>
-            <input type="number" class="form-control" id="phone" placeholder="联系方式" v-model="phone" maxlength="11">
+            <input type="number" class="form-control" id="phone" placeholder="联系方式" v-model="phone" oninput="if(value.length>11)value=value.slice(0,11)">
         </div>
-        <!--<div class="form-group">-->
-        <!--<label for="exampleInputFile">File input</label>-->
-        <!--<input type="file" id="exampleInputFile">-->
-        <!--<p class="help-block">Example block-level help text here.</p>-->
-        <!--</div>-->
-        <!--<div class="checkbox">-->
-        <!--<label>-->
-        <!--<input type="checkbox"> Check me out-->
-        <!--</label>-->
-        <!--</div>-->
+
         <button type="button" class="btn btn-success" @click="add()">添加</button>
         <button type="button" class="btn btn-warning" @click="reset()">重置</button>
     </form>
     <div class="table-responsive">
         <table class="table">
-            <caption>Optional table caption.</caption>
             <thead>
             <tr>
                 <th>#</th>
@@ -115,40 +103,27 @@
                     </button>
                 </td>
             </tr>
-            <!--<tr>-->
-            <!--<th scope="row">2</th>-->
-            <!--<td>Jacob</td>-->
-            <!--<td>Thornton</td>-->
-            <!--<td>@fat</td>-->
-            <!--</tr>-->
-            <!--<tr>-->
-            <!--<th scope="row">3</th>-->
-            <!--<td>Larry</td>-->
-            <!--<td>the Bird</td>-->
-            <!--<td>@twitter</td>-->
-            <!--</tr>-->
             </tbody>
         </table>
     </div>
-</div>
-<!--模态框 弹出框-->
-<div id="mask" v-show="editList" :class="[editList?'show':'hide']">
-    <div class="mask">
-        <div class="title">
-            编辑
-			<span @click="editlist=false">
+    <!--模态框 弹出框-->
+    <div id="mask" v-show="isShow">
+        <div class="mask">
+            <div class="title">
+                编辑
+			<span @click="isShow=false">
                 X
             </span>
-        </div>
-        <div class="content">
-            <input type="text" v-model="editDetail.title" name="name" value="" placeholder="姓名" />
-            <input type="number" v-model="editDetail.user" name="age" value="" placeholder="年龄" />
-            <input type="number" v-model="editDetail.dates" name="phone" value="" placeholder="联系方式" />
-            <button @click="update">更新</button>
-            <button @click="editlist=false">取消</button>
+            </div>
+            <div class="content">
+                <input type="text" v-model="editName" name="name" placeholder="姓名" />
+                <input type="number" v-model="editAge" name="age" placeholder="年龄" oninput="if(value.length>3)value=value.slice(0,3)"/>
+                <input type="number" v-model="editPhone" name="phone" placeholder="联系方式" oninput="if(value.length>11)value=value.slice(0,11)"/>
+                <button v-model="nowIndex" @click="update(nowIndex)">更新</button>
+                <button @click="isShow=false">取消</button>
+            </div>
         </div>
     </div>
-</div>
 </div>
 
 <script src="https://cdn.bootcss.com/vue/2.5.13/vue.min.js"></script>
@@ -165,7 +140,8 @@
             editName: '',
             editAge: '',
             editPhone: '',
-            editList: false
+            isShow: false,
+            nowIndex: ''
         },
         methods: {
             add: function () {
@@ -200,10 +176,18 @@
             edit: function(index){
                 console.log(this)
                 console.log(index)
+                this.nowIndex = index
                 this.isShow = !this.isShow
-                this.editName =this.myData[index].name
+                this.editName = this.myData[index].name
                 this.editAge = this.myData[index].age
                 this.editPhone  = this.myData[index].phone
+            },
+            update: function(index){
+                console.log(this)
+                this.myData[index].name = this.editName
+                this.myData[index].age = this.editAge
+                this.myData[index].phone = this.editPhone
+                this.isShow = !this.isShow
             }
         }
     })
