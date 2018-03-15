@@ -22,22 +22,30 @@
     }
 
     ul {
-        list-style-type: none
+        list-style-type: none;
     }
 
     /*展示上拉加载的数据列表*/
     .data-list li {
         position: relative;
-        padding: 10px 8px 10px 120px;
+        padding: 10px 8px 10px 180px;
         border-bottom: 1px solid #eee;
         height: 48px;
         line-height: 48px;
-        background-color: #d1ecf1;
+        background-color: darkseagreen;
         cursor: pointer;
+    }
+
+    .data-list li:nth-last-child(1) {
+        padding-bottom: 150px;
     }
 
     .data-list li div {
         margin: 0 20px;
+    }
+
+    .data-list li div:nth-last-child(1) {
+        margin-left: 50px;
     }
 
     .pd-name {
@@ -78,20 +86,19 @@
 
     .pd-img, .pd-audio {
         position: absolute;
-        right: 18px;
-        top: 18px;
-        width: 150px;
-        height: 150px;
+        left: 20px;
+        bottom: 45px;
+        width: 100px;
+        height: 100px;
         z-index: 1;
         border-radius: 50%;
     }
 
     #icon {
         position: absolute;
-        right: 18px;
-        top: 185px;
-        z-index: 1;
-        background-color: ghostwhite;
+        left: 0;
+        bottom: 0;
+        background-color: lightslategrey;
         width: 150px;
         text-align: center;
     }
@@ -130,15 +137,6 @@
 <body>
 
 <div id="mescroll" class="mescroll">
-    <div id="icon">
-        <span class="leftIcon"></span>
-        <span :class="middleIcon?'playIcon':'pauseIcon'" @click="isPlay()"></span>
-        <span class="rightIcon"></span>
-    </div>
-    <div>
-        <audio id="audio" class="pd-audio" :src="pdAudio" v-model="pdAudio"></audio>
-        <img v-model="pdImg" class="pd-img" :src="pdImg"/>
-    </div>
     <!--id可以改,而"mescroll"的class不能删-->
     <!--列表内容,如:<ul>列表数据</ul> ...-->
     <!--<p class="btn-change">模拟后台修改商品信息</p>-->
@@ -147,27 +145,42 @@
     <ul class="data-list" id="dataList">
         <li v-for="(pd,index) in pdList" :index="index" :data-url="pd.url" :data-img="pd.img_url"
             @click="playMusic(index,pd.url,pd.img_url)">
+            <div class="left">{{ index+1 }}</div>
             <div class="left pd-name">{{ pd.name }}</div>
             <div class="left pd-singer">{{ pd.singer }}</div>
             <div class="left pd-type">{{ pd.type }}</div>
-            <div class="left pd-dutation">3:30</div>
+            <!--<div class="left pd-dutation">3:30</div>-->
+            <div class="left pd-icon" v-show="index === nowIndex">
+                <img src="http://www.daiwei.org/vue/bg/wave.gif" alt=""/>
+            </div>
         </li>
     </ul>
+    <div>
+        <audio id="audio" class="pd-audio" :src="pdAudio" v-model="pdAudio" @ended="audioEnd()" autoplay></audio>
+        <img v-model="pdImg" class="pd-img" :src="pdImg"/>
+        <div id="icon">
+            <span class="leftIcon" @click.stop="preMusic(nowIndex)" title="上一首"></span>
+            <span :class="middleIcon?'playIcon':'pauseIcon'" @click="isPlay()"></span>
+            <span class="rightIcon" @click.stop="nextMusic(nowIndex)" title="下一首"></span>
+        </div>
+    </div>
+
 </div>
 <script src="https://cdn.bootcss.com/vue/2.5.13/vue.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<!--<script src="./js/jquery.min.js"></script>-->
-<!--<script src="./musicList/js/musicVue.js"></script>-->
 <script src="./js/mescroll.js"></script>
 <script type="text/javascript" charset="utf-8">
     //创建vue对象
     var clearTime
+    var vm2 = this;
     var vm = new Vue({
         el: "#mescroll",
         data: {
             mescroll: null,
             pdList: [],
+            showIcon:false,
             middleIcon: true,
+            nowIndex: 0,
             pdImg: 'http://oiq8j9er1.bkt.clouddn.com/music_%E6%88%91%E8%BF%98%E6%83%B3%E5%A5%B9.jpg',
             pdAudio: 'http://www.daiwei.org/vue/music/%E6%9E%97%E4%BF%8A%E6%9D%B0,%E8%94%A1%E5%8D%93%E5%A6%8D%20-%20%E5%B0%8F%E9%85%92%E7%AA%9D.mp3'
         },
@@ -214,13 +227,56 @@
             }
         },
         methods: {
+            audioEnd: function(){
+              console.log(this)
+                if(this.nowIndex === this.pdList.length-1){
+                   alert('已经是最后一首')
+                }else {
+                    this.nowIndex = this.nowIndex + 1
+                }
+                this.pdImg = this.pdList[this.nowIndex].img_url
+                this.pdAudio = this.pdList[this.nowIndex].url
+                setTimeout(function(){
+                    var audio = document.querySelector('#audio');
+                    this.middleIcon = false
+                    audio.play()
+                    return
+                },500)
+            },
+            preMusic: function(index){
+                if(index === 0){
+                    this.nowIndex = 0
+                }else {
+                    this.nowIndex = index - 1
+                }
+                this.pdImg = this.pdList[this.nowIndex].img_url
+                this.pdAudio = this.pdList[this.nowIndex].url
+                var audio = document.querySelector('#audio');
+                this.middleIcon = false
+                audio.play()
+                return
+            },
+            nextMusic: function(index){
+                if(index === this.pdList.length-1){
+                    this.nowIndex = index
+                }else {
+                    this.nowIndex = index + 1
+                }
+                this.pdImg = this.pdList[this.nowIndex].img_url
+                this.pdAudio = this.pdList[this.nowIndex].url
+                var audio = document.querySelector('#audio');
+                this.middleIcon = false
+                audio.play()
+                return
+            },
             isPlay: function () {
                 console.log(this)
                 var audio = document.querySelector('#audio')
                 if (this.middleIcon === true) {
                     this.middleIcon = false
                     audio.play()
-                } else {                    this.middleIcon = true
+                } else {
+                    this.middleIcon = true
                     audio.pause()
                 }
             },
@@ -229,12 +285,13 @@
                 console.log(musicUrl)
                 console.log(img)
                 console.log(this)
+                this.nowIndex = index
                 this.pdImg = img
                 this.pdAudio = musicUrl
-               var audio = document.querySelector('#audio');
-               this.middleIcon = false
-               audio.play()
-               return
+                var audio = document.querySelector('#audio');
+                this.middleIcon = false
+                audio.play()
+                return
             },
             //上拉回调 page = {num:1, size:10}; num:当前页 ,默认从1开始; size:每页数据条数,默认10
             upCallback: function (page) {

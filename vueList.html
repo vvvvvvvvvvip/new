@@ -57,20 +57,29 @@
     form {
         margin-bottom: 20px;
     }
+
+    .center {
+        text-align: center;
+    }
+
+    h5 {
+        margin-bottom: 30px;
+    }
 </style>
 <body>
+<h5 class="center">vue系列的增删改查</h5>
 <div id="layOut">
     <form>
         <div class="form-group">
-            <label for="userName">姓名</label>
+            <label for="userName">姓名：</label>
             <input type="text" class="form-control" id="userName" placeholder="姓名" v-model="userName">
         </div>
         <div class="form-group">
-            <label for="age">年龄</label>
+            <label for="age">年龄：</label>
             <input type="number" class="form-control" id="age" placeholder="年龄" v-model="age" oninput="if(value.length>3)value=value.slice(0,3)">
         </div>
         <div class="form-group">
-            <label for="phone">手机（电话）</label>
+            <label for="phone">手机（电话）：</label>
             <input type="number" class="form-control" id="phone" placeholder="联系方式" v-model="phone" oninput="if(value.length>11)value=value.slice(0,11)">
         </div>
 
