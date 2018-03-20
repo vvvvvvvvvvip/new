@@ -13,6 +13,36 @@
 <!--音乐列表数据：
                https://vvvvvvvvvvip.github.io/dist/static/data.json-->
 <div id="title">
+    <table border="1">
+        <tr>
+            <th><input type="checkbox"/></th>
+            <th>Month</th>
+            <th>Savings</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" value="one" v-model="checkedNames"/></th>
+            <td>January</td>
+            <td>$100</td>
+        </tr>
+        <tr>
+            <th><input type="checkbox" value="two" v-model="checkedNames"/></th>
+            <td>February</td>
+            <td>$80</td>
+        </tr>
+        <tr>
+            <th><input type="checkbox" value="three" v-model="checkedNames"/></th>
+            <td>February</td>
+            <td>$80</td>
+        </tr>
+        <tr>
+            <th><input type="checkbox" value="four" v-model="checkedNames"/></th>
+            <td>February</td>
+            <td>$80</td>
+        </tr>
+    </table>
+    <button @click="deleteChecked(checkedNames)">删除</button>
+<p>{{ checkedNames }}</p>
+
     <p @click="playList()" v-show="isShow">play Music audio</p>
 
     <audio id="audio" src="http://www.daiwei.org/vue/music/%E6%9E%97%E4%BF%8A%E6%9D%B0,%E8%94%A1%E5%8D%93%E5%A6%8D%20-%20%E5%B0%8F%E9%85%92%E7%AA%9D.mp3"></audio>
@@ -140,7 +170,8 @@
             message: '2',
             question: '',
             answer: 'I cannot give an answer until you ask a question!',
-            isShow: true
+            isShow: true,
+            checkedNames: []
         },
 //        components: {
             // <my-component> 将只在父组件模板中可用
@@ -208,6 +239,9 @@
             console.log("%c%s", "color:red","message: " + this.message)
         },
         methods: {
+            deleteChecked: function(checkedNames){
+                console.log(checkedNames)
+            },
             playList:function(){
                 console.log(this)
                 this.isShow = false

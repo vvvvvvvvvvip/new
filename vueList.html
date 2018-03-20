@@ -86,10 +86,14 @@
         <button type="button" class="btn btn-success" @click="add()">添加</button>
         <button type="button" class="btn btn-warning" @click="reset()">重置</button>
     </form>
+    <!-- 多选（复选框）的时候判断：点击全选/多个/单个选择-->
     <div class="table-responsive">
         <table class="table">
             <thead>
             <tr>
+                <th>
+                    <input type="checkbox">
+                </th>
                 <th>#</th>
                 <th>姓名</th>
                 <th>年龄</th>
@@ -99,6 +103,9 @@
             </thead>
             <tbody>
             <tr v-for="(item,index) in myData">
+                <th>
+                    <input type="checkbox" checked="checked">
+                </th>
                 <th scope="row">{{ index+1 }}</th>
                 <td>{{ item.name }}</td>
                 <td>{{ item.age }}</td>
@@ -114,6 +121,7 @@
             </tr>
             </tbody>
         </table>
+        <button class="btn btn-danger" v-show="deleteAll" @click="remove(-2)">全部删除</button>
     </div>
     <!--模态框 弹出框-->
     <div id="mask" v-show="isShow">
@@ -149,8 +157,9 @@
             editName: '',
             editAge: '',
             editPhone: '',
+            nowIndex: '',
             isShow: false,
-            nowIndex: ''
+            deleteAll: false
         },
         methods: {
             add: function () {
@@ -170,6 +179,7 @@
                     this.userName = ''
                     this.age = ''
                     this.phone = ''
+                    this.deleteAll = true
                 }
             },
             reset: function () {
@@ -180,7 +190,16 @@
             remove: function (index) {
                 console.log(this)
                 console.log(index)
-                this.myData.splice(index,1)
+                if(index == -2){
+                    this.myData = []
+                    this.deleteAll = false
+                }else {
+                    this.myData.splice(index, 1)
+                    console.log(this.myData.length)
+                    if (this.myData.length == 0) {
+                        this.deleteAll = false
+                    }
+                }
             },
             edit: function(index){
                 console.log(this)
