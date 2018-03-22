@@ -1,3 +1,5 @@
+退出全屏/全屏显示参考地址
+http://www.jb51.net/article/96673.htm
 浅谈es6
 https://mashuai666.cnblogs.com/p/8407179.html?from=timeline
 webpack详解
