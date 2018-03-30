@@ -8,8 +8,32 @@
     .red {
         color: red;
     }
+
+    .box {
+        display: flex;
+        align-items: center;
+        padding: 40px 20px;
+        color: white;
+        background-color: black;
+    }
+
+    .item {
+        flex-grow: 1;
+        flex-direction: row;
+        /*row-reverse | column | column-reverse*/
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        border: 1px solid white;
+        background-color: #ff0000;
+    }
 </style>
 <body>
+<div class="box">
+    <span class="item">元素元素元素元素元素元素元素元素</span>
+    <span class="item">元素</span>
+    <span class="item">元素</span>
+</div>
 <!--音乐列表数据：
                https://vvvvvvvvvvip.github.io/dist/static/data.json-->
 <div id="title">
