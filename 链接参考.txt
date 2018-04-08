@@ -1,4 +1,5 @@
 百度api定位参考地址
+秘钥：AXKBzERYQuf4XdooUKyGXDsrCgtDk1FH
 http://lbsyun.baidu.com/jsdemo.htm#i8_3
 移动参考页面
 http://touch.10086.cn/goods/471_471_1044231_1043559.html
