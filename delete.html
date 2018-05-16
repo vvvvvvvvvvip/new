@@ -27,8 +27,29 @@
         border: 1px solid white;
         background-color: #ff0000;
     }
+    .box1 {
+        width: 500px;
+        height: auto;
+    }
+    .box1 div{
+        width: 350px;
+        height: 40px;
+        white-space:initial;
+        overflow : hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
 </style>
 <body>
+
+<div class="box1">
+    <div class="o">元素元素元素元素元素元素元素元素元素元素元素元素元素元素元素元素元素元素元素元素元素元素元素元素</div>
+    <div class="p">元素元素元素元素元素元素元素元素元素元素元素元素元素元元素元素元素元素元素元素元素元素素元素元素</div>
+    <div class="q">元素元素元素元素元素元素元素元素元素元素元素元素元素元素元素元素元素元素元素元素元素元素元素元素</div>
+</div>
+
 <div class="box">
     <span class="item">元素元素元素元素元素元素元素元素</span>
     <span class="item">元素</span>
