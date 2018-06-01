@@ -1,3 +1,5 @@
+h5唤醒app系列参考
+http://echozq.github.io/echo-blog/2015/09/27/timer.html
 angular4 安装
 https://www.cnblogs.com/okaychen/p/6884692.html
 git上传文件之后gitpage 到 申请 域名
