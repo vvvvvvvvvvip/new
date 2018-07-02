@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <script src="./js/jquery.min.js"></script>
+
 </head>
 <style>
     .red {
@@ -42,7 +44,32 @@
         -webkit-box-orient: vertical;
     }
 </style>
+<script>
+    function df(e){
+        var len =$("#selectImg option").length;
+
+        for(var i=0;i<len;i++){
+            if(e[i].selected == true){
+               $("#imgC").attr("src","./image/"+e.value);
+            }
+        }
+    }
+
+</script>
 <body>
+<img id="imgC" src="./image/a.jpg" alt="a.jpg" style="width: 200px;height: 200px"/>
+<select name="imgs" id="selectImg" onChange="df(this)">
+    <option value="a.jpg">aimg</option>
+    <option value="b.jpg">bimg</option>
+    <option value="c.jpg">cimg</option>
+</select>
+<form name="form1"  onsubmit="return foo();" >
+    <input type="radio" name="radioGroup"/>
+    <input type="radio" name="radioGroup"/>
+    <input type="radio" name="radioGroup"/>
+    <input type="radio" name="radioGroup"/>
+    <input type="submit"/>
+</form>
 
 <div class="box1">
     <div class="o">元素元素元素元素元素元素元素元素元素元素元素元素元素元素元素元素元素元素元素元素元素元素元素元素</div>
@@ -175,6 +202,16 @@
 <script src="https://cdn.bootcss.com/vue/2.5.13/vue.min.js"></script>
 
 <script>
+        function foo() {
+//在此处添加代码
+            var c = document.getElementsByName("radioGroup");
+            for (var i = 0; i < c.length; i++) {
+                if (c[i].checked) {
+                    alert(i);
+                    return;
+                }
+            }
+        }
     //全局注册
     var data = {
         counter: 0,
@@ -335,6 +372,24 @@
 //    document.write("name：" + vm.name);
 //    document.write("<br>");
 //    document.write("url："+ vm.url);
+    Array.prototype.distinct = function (){
+        var arr = this,
+                i,
+                obj = {},
+                result = [],
+                len = arr.length;
+        for(i = 0; i< arr.length; i++){
+            if(!obj[arr[i]]){ //如果能查找到，证明数组元素重复了
+                console.log(arr[i])
+                obj[arr[i]] = 1;
+                result.push(arr[i]);
+            }
+        }
+        return result;
+    };
+    var a = [1,2,3,4,5,6,5,3,2,4,56,4,1,2,1,1,1,1,1,1,];
+    var b = a.distinct();
+    console.log(b.toString())
 </script>
 </body>
 </html>
