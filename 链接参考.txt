@@ -1,3 +1,5 @@
+最新angular
+https://blog.csdn.net/yuanlaile/article/details/78488228
 h5唤醒app系列参考
 http://echozq.github.io/echo-blog/2015/09/27/timer.html
 angular4 安装
